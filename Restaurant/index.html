@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimalist Restaurant Landing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <style>
+      body { background: #23242a; font-family: 'Inter', Arial, sans-serif; }
+      h1, h2, h3, .brand-font { font-family: 'Outfit', 'Inter', Arial, sans-serif; font-weight: 700; letter-spacing: -0.5px; }
+      .badge { display: inline-block; background: #ff9100; color: #fff; font-size: 1rem; font-weight: 600; border-radius: 999px; padding: 0.25rem 1.25rem; margin-bottom: 1.5rem; letter-spacing: 1px; box-shadow: 0 2px 10px #ff910033; }
+      .hero-btn-primary { background: #ff9100; color: #fff; border-radius: 999px; font-weight: 700; font-size: 1.1rem; padding: 0.75rem 2.5rem; transition: background 0.2s, transform 0.2s; box-shadow: 0 2px 16px 0 #ff910055; border: none; letter-spacing: 1px; }
+      .hero-btn-primary:hover { background: #ff7000; transform: translateY(-2px) scale(1.04); }
+      .hero-btn-secondary { background: transparent; color: #ff9100; border-radius: 999px; font-weight: 700; font-size: 1.1rem; padding: 0.75rem 2.5rem; border: 2px solid #ff9100; margin-left: 1rem; transition: background 0.2s, color 0.2s, transform 0.2s; box-shadow: 0 2px 16px 0 #ff910022; letter-spacing: 1px; }
+      .hero-btn-secondary:hover { background: #ff9100; color: #fff; transform: translateY(-2px) scale(1.04); }
+      .hero-split-bg { background: linear-gradient(90deg, #23242a 0% 60%, #ff9100 60% 100%); }
+      .hero-section {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 80vh;
+        padding: 8rem 0 6rem 0;
+        overflow: visible;
+      }
+      .hero-blob-bg { position: absolute; right: 10vw; top: 50%; transform: translateY(-50%); width: 420px; height: 420px; z-index: 0; }
+      @media (max-width: 1100px) {
+        .hero-blob-bg { width: 280px; height: 280px; right: 2vw; }
+      }
+      @media (max-width: 900px) {
+        .hero-section { flex-direction: column; padding: 4rem 0 2rem 0; align-items: center; text-align: center; }
+        .hero-content { align-items: center !important; text-align: center !important; padding-left: 0 !important; padding-right: 0 !important; width: 100% !important; }
+        .hero-img-wrap { left: 0 !important; justify-content: center !important; margin-top: 2rem; }
+        .hero-blob-bg { display: none !important; }
+        .hero-actions { justify-content: center !important; display: flex !important; width: 100%; }
+      }
+      .hero-img-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        min-width: 340px;
+        height: 340px;
+        z-index: 2;
+        left: -100px;
+      }
+      @media (max-width: 1100px) {
+        .hero-img-wrap { left: -80px; }
+      }
+      @media (max-width: 900px) {
+        .hero-img-wrap { left: 0; justify-content: center; }
+      }
+      .hero-img-food {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 100%;
+        border: 10px solid #fff;
+        box-shadow: 0 8px 32px 0 #23242a33;
+        background: #fff;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-content { color: #fff; }
+      .hero-headline { color: #fff; text-shadow: 0 2px 24px #23242a99; }
+      .hero-desc { color: #e0e2e6; }
+      .nav-link {
+        color: #fff;
+        padding: 0.5rem 1.2rem;
+        border-radius: 999px;
+        transition: background 0.18s, color 0.18s;
+        display: block;
+      }
+      .nav-link:hover, .nav-link.active {
+        background: #ff9100;
+        color: #23242a !important;
+      }
+      /* Cards on white background: use dark text */
+      .card-on-white {
+        color: #23242a;
+      }
+      .card-on-white h3 {
+        color: #ff9100;
+      }
+      @keyframes fadeUp { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
+      .fade-in-up { opacity: 0; animation: fadeUp 1s ease-out forwards; }
+      .delay-1 { animation-delay: 0.2s; }
+      .delay-2 { animation-delay: 0.4s; }
+      .delay-3 { animation-delay: 0.6s; }
+      .delay-4 { animation-delay: 0.8s; }
+      .delay-5 { animation-delay: 1s; }
+    </style>
+  </head>
+  <body class="bg-[#23242a] text-[#e0e2e6] font-sans">
+    <!-- Navbar -->
+    <nav id="navbar" class="sticky top-0 flex justify-between items-center px-10 py-4 bg-[#23242a] w-full z-30 transition-all duration-300" style="box-shadow: 0 2px 16px 0 #23242a22;">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl font-extrabold tracking-tight brand-font text-[#ff9100]" style="letter-spacing:0.5px;">Leaf & Plate</span>
+        <span class="w-2 h-2 bg-[#ff9100] rounded-full ml-1"></span>
+      </div>
+      <ul id="nav-links" class="hidden md:flex gap-2 text-base font-medium items-center fixed md:static top-0 right-0 h-full w-64 md:w-auto bg-[#23242a] md:bg-transparent flex-col md:flex-row pt-24 md:pt-0 shadow-lg md:shadow-none transition-transform duration-300 z-50 md:z-auto transform md:transform-none translate-x-full md:translate-x-0 overflow-y-auto">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#menu" class="nav-link active">Menu</a></li>
+        <li><a href="#trending" class="nav-link">Trending</a></li>
+        <li><a href="#speciality" class="nav-link">Our Speciality</a></li>
+        <li><a href="#gallery" class="nav-link">Gallery</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hidden md:flex items-center gap-3">
+        <a href="#login" class="bg-white text-[#23242a] px-5 py-2 rounded-full font-semibold shadow hover:bg-[#ff9100] hover:text-white transition">Log in</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-2xl text-white focus:outline-none z-50 block">
+        <span>&#9776;</span>
+      </button>
+    </nav>
+    <div id="sidebar-backdrop" class="fixed inset-0 bg-black bg-opacity-40 z-30 hidden md:hidden transition-opacity duration-300"></div>
+    <script>
+      // Sticky navbar: on scroll, add white bg and shadow
+      window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        const brand = navbar.querySelector('.brand-font');
+        const menuBtn = document.getElementById('menu-btn');
+        if (window.scrollY > 20) {
+          navbar.classList.add('bg-white', 'shadow-lg');
+          navbar.classList.remove('bg-[#23242a]');
+          brand.classList.remove('text-[#ff9100]');
+          brand.classList.add('text-[#23242a]');
+          navbar.querySelectorAll('.nav-link').forEach(e => e.classList.add('text-[#23242a]'));
+          menuBtn.classList.remove('text-white');
+          menuBtn.classList.add('text-black');
+        } else {
+          navbar.classList.remove('bg-white', 'shadow-lg');
+          navbar.classList.add('bg-[#23242a]');
+          brand.classList.remove('text-[#23242a]');
+          brand.classList.add('text-[#ff9100]');
+          navbar.querySelectorAll('.nav-link').forEach(e => e.classList.remove('text-[#23242a]'));
+          menuBtn.classList.remove('text-black');
+          menuBtn.classList.add('text-white');
+        }
+        // --- Active link on scroll (desktop only) ---
+        if(window.innerWidth >= 768) {
+          const sections = [
+            {id: '#about'},
+            {id: '#menu'},
+            {id: '#trending'},
+            {id: '#speciality'},
+            {id: '#gallery'},
+            {id: '#contact'}
+          ];
+          let scrollPos = window.scrollY + navbar.offsetHeight + 24; // 24px buffer
+          let activeId = '';
+          for(let i=0; i<sections.length; i++) {
+            const section = document.querySelector(sections[i].id);
+            if(section && section.offsetTop <= scrollPos) {
+              activeId = sections[i].id;
+            }
+          }
+          document.querySelectorAll('.nav-link').forEach(link => {
+            if(link.getAttribute('href') === activeId) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+
+      // Sidebar toggle for mobile
+      const menuBtn = document.getElementById('menu-btn');
+      const navLinks = document.getElementById('nav-links');
+      const sidebarBackdrop = document.getElementById('sidebar-backdrop');
+
+      function openSidebar() {
+        navLinks.classList.remove('hidden');
+        navLinks.classList.remove('translate-x-full');
+        navLinks.classList.add('translate-x-0');
+        sidebarBackdrop.classList.remove('hidden');
+        document.body.classList.add('nav-open');
+      }
+
+      function closeSidebar() {
+        navLinks.classList.add('translate-x-full');
+        navLinks.classList.remove('translate-x-0');
+        sidebarBackdrop.classList.add('hidden');
+        document.body.classList.remove('nav-open');
+      }
+
+      // Toggle sidebar open/close
+      let sidebarOpen = false;
+      menuBtn.addEventListener('click', () => {
+        if (!sidebarOpen) {
+          openSidebar();
+          sidebarOpen = true;
+        } else {
+          closeSidebar();
+          sidebarOpen = false;
+        }
+      });
+      sidebarBackdrop.addEventListener('click', () => {
+        closeSidebar();
+        sidebarOpen = false;
+      });
+      // Close sidebar and scroll to section on nav link click (mobile)
+      document.querySelectorAll('#nav-links a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          if (window.innerWidth < 768) {
+            const href = link.getAttribute('href');
+            closeSidebar();
+            sidebarOpen = false;
+            if (href && href.startsWith('#')) {
+              const section = document.querySelector(href);
+              if (section) {
+                setTimeout(() => {
+                  section.scrollIntoView({ behavior: 'smooth' });
+                }, 200);
+                e.preventDefault();
+              }
+            }
+          }
+        });
+      });
+    </script>
+    <!-- Hero Section -->
+    <section class="hero-section relative flex flex-col md:flex-row items-center md:items-start justify-between min-h-[80vh] overflow-hidden pt-40 pb-24">
+      <div class="relative z-10 flex flex-col items-start pl-8 md:pl-32 w-full md:w-3/4 hero-content fade-in-up delay-1">
+        <span class="badge fade-in-up delay-1">Signature Restaurant</span>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight hero-headline fade-in-up delay-2">A Feast for the Senses</h1>
+        <p class="text-lg md:text-xl mb-10 max-w-lg hero-desc fade-in-up delay-3">Experience the artistry of modern cuisine, where every plate is a celebration of fresh ingredients, vibrant flavors, and elegant presentation. Reserve your table and savor the unforgettable at Leaf & Plate.</p>
+        <div class="flex gap-4 flex-wrap hero-actions fade-in-up delay-4">
+          <a href="#menu" class="hero-btn-primary">Order now</a>
+          <a href="#reservation" class="hero-btn-secondary">Reservation</a>
+        </div>
+      </div>
+      <div class="hero-img-wrap relative z-10 pr-8 md:pr-0 fade-in-up delay-5">
+        <img src="/Landing/Restaurant/images/dish.jpg" alt="Square Dish" class="hero-blob-bg object-cover shadow-xl border-8 border-white bg-white" />
+        <img src="/Landing/Restaurant/images/hero.jpg" alt="Signature Italian Pasta" class="hero-img-food rounded-full shadow-xl border-8 border-white" style="width: 320px; height: 320px; object-fit: cover; background: white;" />
+      </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 md:px-0 max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold mb-4 text-orange-600" data-aos="fade-up" data-aos-delay="100">About Us</h2>
+      <p class="text-lg text-[#e0e2e6]" data-aos="fade-up" data-aos-delay="200">At Leaf & Plate, we blend contemporary cuisine with a minimalist aesthetic. Our chefs craft seasonal dishes using the freshest ingredients, served in a calm and inviting atmosphere. Perfect for food lovers seeking a unique, refined dining experience.</p>
+    </section>
+    <!-- Trending Dishes Section -->
+    <section id="trending" class="py-16 bg-[#fff8f1] px-6 md:px-0">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center text-orange-600" data-aos="fade-up" data-aos-delay="100">Trending Dishes</h2>
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="bg-white rounded-xl shadow p-5 flex flex-col items-center border border-orange-100 card-on-white" data-aos="fade-up" data-aos-delay="200">
+            <img src="/Landing/Restaurant/images/avocado.jpg" alt="Avocado Toast" class="mb-4 w-full h-36 object-cover rounded-lg" />
+            <h3 class="font-semibold text-lg mb-2">Avocado Toast</h3>
+            <p class="text-center text-sm">Sourdough, smashed avocado, chili flakes, microgreens.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow p-5 flex flex-col items-center border border-orange-100 card-on-white" data-aos="fade-up" data-aos-delay="300">
+            <img src="/Landing/Restaurant/images/pancakes.jpg" alt="Berry Pancakes" class="mb-4 w-full h-36 object-cover rounded-lg" />
+            <h3 class="font-semibold text-lg mb-2">Berry Pancakes</h3>
+            <p class="text-center text-sm">Fluffy pancakes topped with fresh berries and maple syrup.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow p-5 flex flex-col items-center border border-orange-100 card-on-white" data-aos="fade-up" data-aos-delay="400">
+            <img src="/Landing/Restaurant/images/fries.jpg" alt="Cheesy Fries" class="mb-4 w-full h-36 object-cover rounded-lg" />
+            <h3 class="font-semibold text-lg mb-2">Cheesy Fries</h3>
+            <p class="text-center text-sm">Crispy fries, melted cheddar, herbs, and a side of ketchup.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow p-5 flex flex-col items-center border border-orange-100 card-on-white" data-aos="fade-up" data-aos-delay="500">
+            <img src="/Landing/Restaurant/images/choco-cake.jpg" alt="Chocolate Cake" class="mb-4 w-full h-36 object-cover rounded-lg" />
+            <h3 class="font-semibold text-lg mb-2">Chocolate Cake</h3>
+            <p class="text-center text-sm">A rich, moist chocolate cake with a velvety texture and a hint of strawberry.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Our Speciality Section -->
+    <section id="speciality" class="py-16 bg-[#fff8f1] px-6 md:px-0">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center text-orange-600" data-aos="fade-up" data-aos-delay="100">Our Speciality</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-xl shadow p-8 flex flex-col items-center border border-orange-100 card-on-white" data-aos="fade-up" data-aos-delay="200">
+            <img src="/Landing/Restaurant/images/pasta.jpg" alt="Signature Cheesy Pasta" class="mb-4 w-full h-36 object-cover rounded-lg" />
+            <h3 class="font-semibold text-xl mb-2">Signature Cheesy Pasta</h3>
+            <p class="text-center">A creamy pasta dish with melted cheese and a rich sauce, served with toast and broccoli.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow p-8 flex flex-col items-center border border-orange-100 card-on-white" data-aos="fade-up" data-aos-delay="300">
+            <img src="/Landing/Restaurant/images/dessert.jpg" alt="Tropikana Dessert" class="mb-4 w-full h-36 object-cover rounded-lg" />
+            <h3 class="font-semibold text-xl mb-2">Tropikana Dessert</h3>
+            <p class="text-center">Our famous chef special dessert served with a side of vanilla ice cream.</p>
+          </div>
+          <div class="bg-white rounded-xl shadow p-8 flex flex-col items-center border border-orange-100 card-on-white" data-aos="fade-up" data-aos-delay="400">
+            <img src="/Landing/Restaurant/images/special.jpg" alt="Chef's Special Creation" class="mb-4 w-full h-36 object-cover rounded-lg" />
+            <h3 class="font-semibold text-xl mb-2">Chef's Special Creation</h3>
+            <p class="text-center">A surprise dish crafted daily by our chef, inspired by seasonal ingredients.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Menu Highlights Section -->
+    <section id="menu" class="py-16 bg-[#fff8f1] px-6 md:px-0">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center text-orange-600" data-aos="fade-up" data-aos-delay="100">Menu Highlights</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center border border-orange-100 card-on-white" data-aos="fade-up" data-aos-delay="200">
+            <img src="/Landing/Restaurant/images/salad.jpg" alt="Garden Fresh Salad" class="mb-4 w-full h-36 object-cover rounded-lg" />
+            <h3 class="font-semibold text-xl mb-2">Garden Fresh Salad</h3>
+            <p class="text-center">Crisp greens, cherry tomatoes, avocado, and herbs.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center border border-orange-100 card-on-white" data-aos="fade-up" data-aos-delay="300">
+            <img src="/Landing/Restaurant/images/soup.jpg" alt="Herb Infused Pasta" class="mb-4 w-full h-36 object-cover rounded-lg" />
+            <h3 class="font-semibold text-xl mb-2">El Classico Soup</h3>
+            <p class="text-center">A rich, velvety soup made with fresh herbs and a hint of garlic.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow p-6 flex flex-col items-center border border-orange-100 card-on-white" data-aos="fade-up" data-aos-delay="400">
+            <img src="/Landing/Restaurant/images/dessert.jpg" alt="Signature Dessert" class="mb-4 w-full h-36 object-cover rounded-lg" />
+            <h3 class="font-semibold text-xl mb-2">Signature Dessert</h3>
+            <p class="text-center">A rotating selection of minimalist desserts to end your meal perfectly.</p>
+          </div>
+        </div>
+        <div class="flex justify-center mt-8">
+          <a href="#menu" class="hero-btn-primary">View Full Menu</a>
+        </div>
+      </div>
+    </section>
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-16 px-6 md:px-0 max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold mb-8 text-center text-orange-600" data-aos="fade-up" data-aos-delay="100">Gallery</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img src="/Landing/Restaurant/images/gallery_1.jpg" alt="Dish 1" class="rounded-lg shadow hover:scale-105 transition-transform object-cover w-full h-40" />
+        <img src="/Landing/Restaurant/images/gallery_2.jpg" alt="Dish 2" class="rounded-lg shadow hover:scale-105 transition-transform object-cover w-full h-40" />
+        <img src="/Landing/Restaurant/images/gallery_3.jpg" alt="Ambience" class="rounded-lg shadow hover:scale-105 transition-transform object-cover w-full h-40" />
+        <img src="/Landing/Restaurant/images/gallery_4.jpg" alt="Chef" class="rounded-lg shadow hover:scale-105 transition-transform object-cover w-full h-40" />
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-orange-50 px-6 md:px-0">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-3xl font-bold mb-4 text-center text-orange-600" data-aos="fade-up" data-aos-delay="100">Contact & Reservations</h2>
+        <form class="flex flex-col gap-4 bg-white p-8 rounded-lg shadow border border-orange-100">
+          <input type="text" placeholder="Name" class="px-4 py-2 rounded border border-orange-200 bg-transparent focus:outline-none focus:ring-2 focus:ring-orange-400" required />
+          <input type="email" placeholder="Email" class="px-4 py-2 rounded border border-orange-200 bg-transparent focus:outline-none focus:ring-2 focus:ring-orange-400" required />
+          <textarea placeholder="Message or Reservation Details" class="px-4 py-2 rounded border border-orange-200 bg-transparent focus:outline-none focus:ring-2 focus:ring-orange-400" rows="4" required></textarea>
+          <button type="submit" class="bg-orange-500 text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-600 transition">Send</button>
+        </form>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="pt-12 pb-6 px-4 md:px-0 bg-[#23242a] border-t border-orange-100 mt-12" data-aos="fade-up" data-aos-delay="100">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-[#e0e2e6] pl-6 pr-6 sm:pl-12 sm:pr-12">
+        <!-- Brand -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-2xl font-extrabold tracking-tight brand-font text-[#ff9100]" style="letter-spacing:0.5px;">Leaf & Plate</span>
+            <span class="w-2 h-2 bg-[#ff9100] rounded-full ml-1"></span>
+          </div>
+          <p class="text-sm mb-2">Where taste meets artistry.</p>
+          <div class="flex gap-3 mt-2 text-xl text-[#e0e2e6]">
+            <a href="#" aria-label="Instagram" class="hover:text-[#ff9100] transition"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.75c0-5.25-4.25-9.75-9-9.75S3 7.5 3 12.75v5.25c0 3.75 2.25 6.75 5.5 6.75S12 20.25 12 16.5v-2.25h4.5v-2.25c0-2.25 1.5-4.25 3.75-4.25S21 14.25 21 16.5v2.25h-4.5z"/></svg></a>
+            <a href="#" aria-label="Twitter" class="hover:text-[#ff9100] transition"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff9100" class="size-5"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 7 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+            <a href="#" aria-label="Facebook" class="hover:text-[#ff9100] transition"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff9100" class="size-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.75c0-5.25-4.25-9.75-9-9.75S3 7.5 3 12.75v5.25c0 3.75 2.25 6.75 5.5 6.75S12 20.25 12 16.5v-2.25h4.5v-2.25c0-2.25 1.5-4.25 3.75-4.25S21 14.25 21 16.5v2.25h-4.5z"/></svg></a>
+          </div>
+        </div>
+        <!-- Explore -->
+        <div>
+          <div class="font-semibold mb-3">Explore</div>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#about" class="hover:text-[#ff9100] transition">About</a></li>
+            <li><a href="#menu" class="hover:text-[#ff9100] transition">Menu</a></li>
+            <li><a href="#trending" class="hover:text-[#ff9100] transition">Trending</a></li>
+            <li><a href="#speciality" class="hover:text-[#ff9100] transition">Our Speciality</a></li>
+            <li><a href="#gallery" class="hover:text-[#ff9100] transition">Gallery</a></li>
+            <li><a href="#contact" class="hover:text-[#ff9100] transition">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Help -->
+        <div>
+          <div class="font-semibold mb-3">Help</div>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-[#ff9100] transition">Account</a></li>
+            <li><a href="#" class="hover:text-[#ff9100] transition">Support Center</a></li>
+            <li><a href="#" class="hover:text-[#ff9100] transition">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-[#ff9100] transition">Terms & Conditions</a></li>
+          </ul>
+        </div>
+        <!-- Contact with correct icons -->
+        <div>
+          <div class="font-semibold mb-3">Contact</div>
+          <ul class="space-y-3 text-sm">
+            <li class="flex items-center gap-2">
+              <!-- Heroicons: Map Pin -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff9100" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21.75c-2.5-2.5-7.5-7.364-7.5-11.25A7.5 7.5 0 1 1 19.5 10.5c0 3.886-5 8.75-7.5 11.25z" /><circle cx="12" cy="10.5" r="2.25" fill="#ff9100"/></svg>
+              123 Foodie Lane, Gourmet City
+            </li>
+            <li class="flex items-center gap-2">
+              <!-- Heroicons: Phone -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff9100" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+              </svg>
+              +91 98765 43210
+            </li>
+            <li class="flex items-center gap-2">
+              <!-- Heroicons: Envelope -->
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff9100" class="size-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
+              hello@leafandplate.com
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-center text-orange-400 text-xs mt-8">&copy; 2025 Leaf & Plate. All rights reserved.</div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

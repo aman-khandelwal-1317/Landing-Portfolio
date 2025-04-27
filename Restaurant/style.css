@@ -1,0 +1,13 @@
+/* Custom styles for minimal tweaks, if needed */
+body {
+  font-family: 'Montserrat', 'Segoe UI', 'Arial', sans-serif;
+}
+
+h1, h2, h3, .brand-font {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Hide scroll on mobile nav when open */
+body.nav-open {
+  overflow: hidden;
+}

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Showcase | Modern Web Designs</title>
+    <meta name="description" content="Showcase of modern, professional landing page designs for various industries">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        accent1: {
+                            500: '#00c6ff',
+                            600: '#00a5e9',
+                        },
+                        accent2: {
+                            500: '#ff9100',
+                            600: '#ff7000',
+                        },
+                        accent3: {
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        },
+                        dark: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        h1, h2, h3, .brand-font {
+            font-family: 'Outfit', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        
+        .card-hover-effect:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .gradient-text-blue {
+            background: linear-gradient(90deg, #00c6ff, #0284c7);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gradient-text-orange {
+            background: linear-gradient(90deg, #ff9100, #ff7000);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .gradient-text-teal {
+            background: linear-gradient(90deg, #0ea5e9, #10b981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Modern Landing Page Designs</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300 mb-10">
+                Professional, responsive landing pages for various industries
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#showcase" class="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition duration-300 shadow-lg hover:shadow-xl">
+                    View Showcase
+                </a>
+                <a href="#contact" class="px-8 py-3 bg-white hover:bg-gray-100 text-primary-600 font-medium rounded-lg transition duration-300 shadow-lg hover:shadow-xl">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Showcase Section -->
+    <section id="showcase" class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Our Landing Page Collection</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Cars Landing Page -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
+                    <div class="relative">
+                        <div class="absolute top-0 right-0 bg-accent1-500 text-white px-4 py-1 rounded-bl-lg font-medium">
+                            Automotive
+                        </div>
+                        <img src="images/velocity.png" alt="Velocity Motors Landing Page" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 gradient-text-blue">Velocity Motors</h3>
+                        <p class="text-gray-600 mb-6">
+                            A premium automotive landing page with sleek design, featuring gradient accents and modern UI components.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Dark Mode</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Gradients</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Responsive</span>
+                        </div>
+                        <a href="Cars/index.html" target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center px-6 py-3 bg-accent1-500 hover:bg-accent1-600 text-white font-medium rounded-lg transition duration-300">
+                            View Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Restaurant Landing Page -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
+                    <div class="relative">
+                        <div class="absolute top-0 right-0 bg-accent2-500 text-white px-4 py-1 rounded-bl-lg font-medium">
+                            Restaurant
+                        </div>
+                        <img src="images/leaf.png" alt="Leaf & Plate Restaurant Landing Page" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 gradient-text-orange">Leaf & Plate</h3>
+                        <p class="text-gray-600 mb-6">
+                            A warm, inviting restaurant landing page with elegant design, food gallery, and online reservation system.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Animations</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Menu Display</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Testimonials</span>
+                        </div>
+                        <a href="Restaurant/index.html" target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center px-6 py-3 bg-accent2-500 hover:bg-accent2-600 text-white font-medium rounded-lg transition duration-300">
+                            View Demo
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Software Landing Page -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
+                    <div class="relative">
+                        <div class="absolute top-0 right-0 bg-accent3-500 text-white px-4 py-1 rounded-bl-lg font-medium">
+                            Software
+                        </div>
+                        <img src="images/trade.png" alt="TradeStat Pro Software Landing Page" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 gradient-text-teal">TradeStat Pro</h3>
+                        <p class="text-gray-600 mb-6">
+                            A professional SaaS landing page for financial trading software with feature showcase and pricing plans.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Clean UI</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Pricing Tables</span>
+                            <span class="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm">Dashboard Preview</span>
+                        </div>
+                        <a href="Software/index.html" target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center px-6 py-3 bg-accent3-500 hover:bg-accent3-600 text-white font-medium rounded-lg transition duration-300">
+                            View Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-24 px-4 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Key Features</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Fully Responsive</h3>
+                    <p class="text-gray-600">
+                        All landing pages are designed to look great on any device, from mobile phones to desktop computers.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-paint-brush text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Modern Design</h3>
+                    <p class="text-gray-600">
+                        Clean, contemporary aesthetics with attention to typography, spacing, and visual hierarchy.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-tachometer-alt text-2xl text-primary-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Performance Optimized</h3>
+                    <p class="text-gray-600">
+                        Fast loading times with optimized assets and efficient code structure for better user experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-24 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Our Design Process</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-xl font-bold">1</div>
+                    <h3 class="text-xl font-bold mb-3">Research</h3>
+                    <p class="text-gray-600">
+                        Understanding the industry, target audience, and competitive landscape.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-xl font-bold">2</div>
+                    <h3 class="text-xl font-bold mb-3">Design</h3>
+                    <p class="text-gray-600">
+                        Creating wireframes and visual designs with modern UI principles.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-xl font-bold">3</div>
+                    <h3 class="text-xl font-bold mb-3">Development</h3>
+                    <p class="text-gray-600">
+                        Building responsive, optimized code with attention to detail.
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-xl font-bold">4</div>
+                    <h3 class="text-xl font-bold mb-3">Launch</h3>
+                    <p class="text-gray-600">
+                        Testing across devices and deploying with performance monitoring.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contact" class="py-24 px-4 hero-gradient text-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to get started?</h2>
+            <p class="text-xl max-w-2xl mx-auto text-gray-300 mb-10">
+                Contact us today to discuss your landing page needs and how we can help you create a stunning online presence.
+            </p>
+            
+            <div class="max-w-md mx-auto bg-white rounded-xl p-8 shadow-lg">
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition duration-300 shadow">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-900 text-gray-400 py-12 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Landing Page Showcase</h3>
+                    <p class="mb-4">
+                        Modern, responsive landing page designs for various industries and use cases.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Landing Pages</h3>
+                    <ul class="space-y-2">
+                        <li><a href="Cars/index.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Velocity Motors</a></li>
+                        <li><a href="Restaurant/index.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Leaf & Plate</a></li>
+                        <li><a href="Software/index.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">TradeStat Pro</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition">Design Guidelines</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-white mb-4">Contact</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary-500"></i>
+                            <span>123 Design Street, Web City, 10001</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-3 text-primary-500"></i>
+                            <span>contact@landingshowcase.com</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-3 text-primary-500"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+                <p>&copy; 2025 Landing Page Showcase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
