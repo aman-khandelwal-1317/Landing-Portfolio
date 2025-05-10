@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlobalSource | Professional Outsourcing Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0f4c81',
+                        secondary: '#3a7ca5',
+                        accent: '#f2a104',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <span class="text-primary text-2xl font-bold">Global<span class="text-accent">Source</span></span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-primary font-medium transition duration-300">Home</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary font-medium transition duration-300">Services</a>
+                    <a href="#about" class="text-gray-700 hover:text-primary font-medium transition duration-300">About Us</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-primary font-medium transition duration-300">Testimonials</a>
+                    <a href="#contact" class="bg-primary text-white px-5 py-2 rounded-md hover:bg-secondary transition duration-300">Contact Us</a>
+                </div>
+                
+                <!-- Mobile Navigation Toggle -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-gray-700 hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="md:hidden hidden pb-4">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-primary">Home</a>
+                <a href="#services" class="block py-2 text-gray-700 hover:text-primary">Services</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-primary">About Us</a>
+                <a href="#testimonials" class="block py-2 text-gray-700 hover:text-primary">Testimonials</a>
+                <a href="#contact" class="block py-2 mt-2 bg-primary text-white px-4 py-2 rounded-md hover:bg-secondary inline-block">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-primary to-secondary py-20 text-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Professional Outsourcing Solutions for Your Business</h1>
+                    <p class="text-lg mb-8 text-gray-100">We help businesses scale efficiently by providing high-quality outsourcing services tailored to your specific needs.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#services" class="bg-accent text-white px-6 py-3 rounded-md font-medium hover:bg-yellow-600 transition duration-300 text-center">Our Services</a>
+                        <a href="#contact" class="bg-white text-primary px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition duration-300 text-center">Get a Quote</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Corporate Team" class="rounded-lg shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-4"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">We offer a comprehensive range of outsourcing services to help your business grow and operate efficiently.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 rounded-lg shadow-lg p-8 hover:shadow-xl transition duration-300 border-t-4 border-primary">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-code text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">IT & Software Development</h3>
+                    <p class="text-gray-600 mb-4">Custom software development, web applications, mobile apps, and IT support services tailored to your business needs.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Custom Software Solutions</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Web & Mobile Development</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> QA & Testing Services</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> IT Support & Maintenance</li>
+                    </ul>
+                    <a href="#contact" class="text-primary font-medium hover:text-secondary transition duration-300 flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-gray-50 rounded-lg shadow-lg p-8 hover:shadow-xl transition duration-300 border-t-4 border-primary">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-headset text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Customer Support & BPO</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive customer service solutions, call center operations, and back-office support to enhance your customer experience.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> 24/7 Customer Support</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Multilingual Call Centers</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Technical Support Services</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Back-Office Processing</li>
+                    </ul>
+                    <a href="#contact" class="text-primary font-medium hover:text-secondary transition duration-300 flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-gray-50 rounded-lg shadow-lg p-8 hover:shadow-xl transition duration-300 border-t-4 border-primary">
+                    <div class="text-primary mb-4">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Digital Marketing & Content</h3>
+                    <p class="text-gray-600 mb-4">Strategic digital marketing, content creation, and social media management to boost your online presence and drive growth.</p>
+                    <ul class="text-gray-600 mb-6 space-y-2">
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> SEO & SEM Services</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Content Creation & Management</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Social Media Marketing</li>
+                        <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Analytics & Reporting</li>
+                    </ul>
+                    <a href="#contact" class="text-primary font-medium hover:text-secondary transition duration-300 flex items-center">
+                        Learn More <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Our Team" class="rounded-lg shadow-xl w-full">
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">About Us</h2>
+                    <div class="w-20 h-1 bg-accent mb-6"></div>
+                    <p class="text-lg text-gray-600 mb-6">GlobalSource is a leading provider of outsourcing solutions, helping businesses of all sizes optimize their operations, reduce costs, and focus on their core competencies.</p>
+                    <p class="text-lg text-gray-600 mb-6">With over 10 years of experience and a team of highly skilled professionals, we deliver exceptional services tailored to meet the unique needs of each client.</p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-check-circle text-primary mr-2"></i>
+                                <span class="font-medium text-gray-700">Experienced Team</span>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-check-circle text-primary mr-2"></i>
+                                <span class="font-medium text-gray-700">Quality Assurance</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-check-circle text-primary mr-2"></i>
+                                <span class="font-medium text-gray-700">Cost-Effective</span>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-check-circle text-primary mr-2"></i>
+                                <span class="font-medium text-gray-700">Timely Delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-secondary transition duration-300 inline-block">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Client Testimonials</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-4"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">See what our clients have to say about our outsourcing services.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-50 rounded-lg shadow p-8 relative">
+                    <div class="text-accent mb-4">
+                        <i class="fas fa-quote-left text-4xl opacity-20"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"GlobalSource has transformed our customer support operations. Their team is responsive, professional, and has significantly improved our customer satisfaction scores."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sarah Johnson</h4>
+                            <p class="text-gray-600 text-sm">CEO, TechSolutions Inc.</p>
+                        </div>
+                    </div>
+                    <div class="text-accent mt-4 flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-50 rounded-lg shadow p-8 relative">
+                    <div class="text-accent mb-4">
+                        <i class="fas fa-quote-left text-4xl opacity-20"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"The software development team at GlobalSource delivered our project on time and within budget. Their attention to detail and technical expertise exceeded our expectations."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Michael Chen</h4>
+                            <p class="text-gray-600 text-sm">CTO, InnovateCorp</p>
+                        </div>
+                    </div>
+                    <div class="text-accent mt-4 flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-50 rounded-lg shadow p-8 relative">
+                    <div class="text-accent mb-4">
+                        <i class="fas fa-quote-left text-4xl opacity-20"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Our digital marketing efforts have seen tremendous growth since partnering with GlobalSource. Their team is creative, data-driven, and consistently delivers results."</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Emily Rodriguez</h4>
+                            <p class="text-gray-600 text-sm">Marketing Director, GrowthBrands</p>
+                        </div>
+                    </div>
+                    <div class="text-accent mt-4 flex">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-4"></div>
+                <p class="text-lg text-gray-300 max-w-2xl mx-auto">Ready to optimize your business operations? Contact us today for a free consultation.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/3">
+                    <div class="mb-10">
+                        <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                        <div class="flex items-start mb-4">
+                            <div class="text-accent mr-3 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <p class="text-gray-300">123 Business Avenue<br>Corporate Park, Suite 500<br>New York, NY 10001</p>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="text-accent mr-3">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <p class="text-gray-300">+1 (555) 123-4567</p>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="text-accent mr-3">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <p class="text-gray-300">info@globalsource.com</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-700 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-primary w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-2/3">
+                    <form class="bg-gray-800 rounded-lg p-8 shadow-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-white" placeholder="Your Name" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-white" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="company" class="block text-sm font-medium text-gray-300 mb-2">Company Name</label>
+                            <input type="text" id="company" name="company" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-white" placeholder="Your Company">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service Interested In</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-white">
+                                <option value="" disabled selected>Select a Service</option>
+                                <option value="it">IT & Software Development</option>
+                                <option value="bpo">Customer Support & BPO</option>
+                                <option value="marketing">Digital Marketing & Content</option>
+                                <option value="other">Other Services</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-primary text-white" placeholder="Tell us about your project or requirements" required></textarea>
+                        </div>
+                        
+                        <div class="flex items-center mb-6">
+                            <input type="checkbox" id="privacy" name="privacy" class="mr-2 focus:ring-primary h-4 w-4" required>
+                            <label for="privacy" class="text-sm text-gray-300">I agree to the <a href="#" class="text-accent hover:underline">Privacy Policy</a> and <a href="#" class="text-accent hover:underline">Terms of Service</a></label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-accent hover:bg-yellow-600 text-white font-medium py-3 px-4 rounded-md transition duration-300">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-10">
+        <div class="container mx-auto px-4 md:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-white text-2xl font-bold">Global<span class="text-accent">Source</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your trusted partner for professional outsourcing solutions. We help businesses scale efficiently and focus on their core competencies.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-accent transition duration-300">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-accent transition duration-300">Services</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-accent transition duration-300">About Us</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-accent transition duration-300">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-accent transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-accent transition duration-300">IT & Software Development</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-accent transition duration-300">Customer Support & BPO</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-accent transition duration-300">Digital Marketing & Content</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to our newsletter for the latest updates and insights.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 bg-gray-700 border border-gray-600 rounded-l-md focus:outline-none focus:ring-2 focus:ring-primary text-white w-full">
+                        <button type="submit" class="bg-accent hover:bg-yellow-600 text-white px-4 py-2 rounded-r-md transition duration-300">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 GlobalSource. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-accent transition duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-accent transition duration-300">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Mobile Menu Toggle Script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
