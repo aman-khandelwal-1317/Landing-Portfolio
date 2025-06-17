@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blue Wave Digital Agency</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#0A192F", secondary: "#64FFDA" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+          font-family: 'Inter', sans-serif;
+          scroll-behavior: smooth;
+      }
+      .hero-gradient {
+          background: linear-gradient(90deg, rgba(10, 25, 47, 0.9) 0%, rgba(10, 25, 47, 0.7) 50%, rgba(10, 25, 47, 0.4) 100%);
+      }
+      .nav-scrolled {
+          background-color: rgba(10, 25, 47, 0.95);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      input:focus, textarea:focus {
+          outline: none;
+          border-color: #64FFDA;
+      }
+      .service-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px rgba(10, 25, 47, 0.1);
+      }
+      .portfolio-item:hover .portfolio-overlay {
+          opacity: 1;
+      }
+      .testimonial-slide {
+          opacity: 0.5;
+          transform: scale(0.9);
+          transition: all 0.3s ease;
+      }
+      .testimonial-slide.active {
+          opacity: 1;
+          transform: scale(1);
+      }
+      .custom-checkbox {
+          position: relative;
+          padding-left: 30px;
+          cursor: pointer;
+      }
+      .custom-checkbox input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+      }
+      .checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 20px;
+          width: 20px;
+          background-color: #f8fafc;
+          border: 1px solid #cbd5e1;
+          border-radius: 4px;
+      }
+      .custom-checkbox:hover input ~ .checkmark {
+          background-color: #f1f5f9;
+      }
+      .custom-checkbox input:checked ~ .checkmark {
+          background-color: #64FFDA;
+          border-color: #64FFDA;
+      }
+      .checkmark:after {
+          content: "";
+          position: absolute;
+          display: none;
+      }
+      .custom-checkbox input:checked ~ .checkmark:after {
+          display: block;
+      }
+      .custom-checkbox .checkmark:after {
+          left: 7px;
+          top: 3px;
+          width: 6px;
+          height: 11px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <!-- Navigation -->
+    <header
+      id="navbar"
+      class="fixed w-full top-0 left-0 z-50 transition-all duration-300"
+    >
+      <div
+        class="container mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <a href="#" class="text-white font-['Pacifico'] text-2xl">logo</a>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a
+            href="#home"
+            class="text-white hover:text-secondary transition-colors"
+            >Home</a
+          >
+          <a
+            href="#services"
+            class="text-white hover:text-secondary transition-colors"
+            >Services</a
+          >
+          <a
+            href="#portfolio"
+            class="text-white hover:text-secondary transition-colors"
+            >Portfolio</a
+          >
+          <a
+            href="#blog"
+            class="text-white hover:text-secondary transition-colors"
+            >Blog</a
+          >
+          <a
+            href="#testimonials"
+            class="text-white hover:text-secondary transition-colors"
+            >Testimonials</a
+          >
+          <a
+            href="#contact"
+            class="bg-secondary text-primary px-5 py-2 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+            >Get in Touch</a
+          >
+        </nav>
+        <button
+          class="md:hidden text-white w-10 h-10 flex items-center justify-center"
+        >
+          <i class="ri-menu-line ri-lg"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="relative h-[80vh] flex items-center"
+      style="background-image: url('https://readdy.ai/api/search-image?query=modern%20digital%20agency%20office%20with%20blue%20color%20scheme%2C%20minimalist%20design%2C%20large%20windows%2C%20open%20workspace%20with%20computers%2C%20creative%20atmosphere%2C%20professional%20environment%2C%20high-quality%20render%2C%20ultra-realistic%2C%208k%20resolution%2C%20perfect%20lighting&width=1920&height=1080&seq=1&orientation=landscape'); background-size: cover; background-position: center;"
+    >
+      <div class="absolute inset-0 hero-gradient"></div>
+      <div class="container mx-auto px-6 relative z-10 w-full">
+        <div class="max-w-2xl">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
+          >
+            Transforming Ideas Into Digital Excellence
+          </h1>
+          <p class="text-lg text-gray-200 mb-8">
+            We craft innovative digital solutions that help businesses thrive in
+            the modern landscape. Our team of experts delivers results that
+            exceed expectations.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#services"
+              class="bg-secondary text-primary px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+              >Our Services</a
+            >
+            <a
+              href="#portfolio"
+              class="border-2 border-white text-white px-6 py-3 !rounded-button font-medium hover:bg-white hover:bg-opacity-10 transition-all whitespace-nowrap"
+              >View Portfolio</a
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2"
+      >
+        <span class="w-3 h-3 rounded-full bg-secondary"></span>
+        <span class="w-3 h-3 rounded-full bg-white bg-opacity-50"></span>
+        <span class="w-3 h-3 rounded-full bg-white bg-opacity-50"></span>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Our Services
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            We provide comprehensive digital solutions tailored to your business
+            needs, helping you achieve your goals and stand out in the digital
+            landscape.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-code-s-slash-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Web Development
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Custom websites built with cutting-edge technologies that deliver
+              exceptional user experiences and drive business growth.
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn more
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-palette-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              UI/UX Design
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Intuitive and visually appealing interfaces that enhance user
+              engagement and satisfaction while reflecting your brand identity.
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn more
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-line-chart-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Digital Marketing
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Strategic marketing campaigns that increase your online
+              visibility, drive qualified traffic, and convert visitors into
+              loyal customers.
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn more
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-smartphone-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Mobile App Development
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Native and cross-platform mobile applications that provide
+              seamless experiences across all devices and operating systems.
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn more
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-shopping-cart-2-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              E-Commerce Solutions
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Robust online stores with secure payment gateways, inventory
+              management, and optimized checkout processes to maximize sales.
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn more
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+
+          <!-- Service 6 -->
+          <div
+            class="service-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-server-line ri-2x text-primary"></i>
+            </div>
+            <h3 class="text-xl font-semibold text-primary mb-3">
+              Cloud Solutions
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Scalable cloud infrastructure that ensures high availability,
+              security, and performance for your digital products and services.
+            </p>
+            <a href="#" class="text-secondary font-medium flex items-center">
+              Learn more
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Our Portfolio
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Explore our recent projects and see how we've helped businesses
+            achieve their digital goals with innovative solutions.
+          </p>
+        </div>
+
+        <div class="flex justify-center mb-10">
+          <div class="inline-flex bg-gray-100 p-1 rounded-full">
+            <button
+              class="px-5 py-2 rounded-full bg-primary text-white whitespace-nowrap"
+            >
+              All Projects
+            </button>
+            <button
+              class="px-5 py-2 rounded-full text-gray-600 hover:bg-gray-200 whitespace-nowrap"
+            >
+              Web Design
+            </button>
+            <button
+              class="px-5 py-2 rounded-full text-gray-600 hover:bg-gray-200 whitespace-nowrap"
+            >
+              Mobile Apps
+            </button>
+            <button
+              class="px-5 py-2 rounded-full text-gray-600 hover:bg-gray-200 whitespace-nowrap"
+            >
+              E-Commerce
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Portfolio Item 1 -->
+          <div class="portfolio-item relative rounded-lg overflow-hidden group">
+            <img
+              src="https://readdy.ai/api/search-image?query=modern%20e-commerce%20website%20design%20with%20blue%20color%20scheme%2C%20professional%20product%20display%2C%20clean%20layout%2C%20shopping%20cart%20functionality%2C%20high-quality%20product%20images%2C%20responsive%20design%2C%20minimalist%20navigation&width=600&height=450&seq=2&orientation=landscape"
+              alt="E-commerce Project"
+              class="w-full h-72 object-cover object-top"
+            />
+            <div
+              class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-end p-6 opacity-0 transition-opacity duration-300"
+            >
+              <h3 class="text-xl font-semibold text-white mb-2">
+                Luxury Fashion E-Commerce
+              </h3>
+              <p class="text-gray-200 mb-3">E-Commerce, Web Design</p>
+              <a href="#" class="text-secondary font-medium flex items-center">
+                View Project
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 2 -->
+          <div class="portfolio-item relative rounded-lg overflow-hidden group">
+            <img
+              src="https://readdy.ai/api/search-image?query=mobile%20app%20interface%20design%20with%20navy%20blue%20color%20scheme%2C%20user-friendly%20navigation%2C%20clean%20typography%2C%20social%20media%20integration%2C%20profile%20screens%2C%20notification%20system%2C%20modern%20UI%20elements&width=600&height=450&seq=3&orientation=landscape"
+              alt="Mobile App Project"
+              class="w-full h-72 object-cover object-top"
+            />
+            <div
+              class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-end p-6 opacity-0 transition-opacity duration-300"
+            >
+              <h3 class="text-xl font-semibold text-white mb-2">
+                Fitness Tracking App
+              </h3>
+              <p class="text-gray-200 mb-3">Mobile App, UI/UX Design</p>
+              <a href="#" class="text-secondary font-medium flex items-center">
+                View Project
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 3 -->
+          <div class="portfolio-item relative rounded-lg overflow-hidden group">
+            <img
+              src="https://readdy.ai/api/search-image?query=corporate%20website%20design%20with%20blue%20color%20scheme%2C%20professional%20business%20layout%2C%20team%20section%2C%20services%20overview%2C%20contact%20form%2C%20about%20us%20page%2C%20testimonials%20section%2C%20responsive%20design&width=600&height=450&seq=4&orientation=landscape"
+              alt="Corporate Website"
+              class="w-full h-72 object-cover object-top"
+            />
+            <div
+              class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-end p-6 opacity-0 transition-opacity duration-300"
+            >
+              <h3 class="text-xl font-semibold text-white mb-2">
+                Financial Services Website
+              </h3>
+              <p class="text-gray-200 mb-3">Web Design, Development</p>
+              <a href="#" class="text-secondary font-medium flex items-center">
+                View Project
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 4 -->
+          <div class="portfolio-item relative rounded-lg overflow-hidden group">
+            <img
+              src="https://readdy.ai/api/search-image?query=restaurant%20ordering%20system%20with%20blue%20interface%2C%20menu%20display%2C%20ordering%20functionality%2C%20payment%20processing%2C%20reservation%20system%2C%20food%20categories%2C%20user%20reviews%2C%20mobile%20responsive&width=600&height=450&seq=5&orientation=landscape"
+              alt="Restaurant Ordering System"
+              class="w-full h-72 object-cover object-top"
+            />
+            <div
+              class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-end p-6 opacity-0 transition-opacity duration-300"
+            >
+              <h3 class="text-xl font-semibold text-white mb-2">
+                Restaurant Ordering System
+              </h3>
+              <p class="text-gray-200 mb-3">Web App, E-Commerce</p>
+              <a href="#" class="text-secondary font-medium flex items-center">
+                View Project
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 5 -->
+          <div class="portfolio-item relative rounded-lg overflow-hidden group">
+            <img
+              src="https://readdy.ai/api/search-image?query=real%20estate%20website%20design%20with%20blue%20color%20scheme%2C%20property%20listings%2C%20search%20functionality%2C%20map%20integration%2C%20property%20details%20page%2C%20agent%20profiles%2C%20contact%20forms%2C%20modern%20layout&width=600&height=450&seq=6&orientation=landscape"
+              alt="Real Estate Platform"
+              class="w-full h-72 object-cover object-top"
+            />
+            <div
+              class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-end p-6 opacity-0 transition-opacity duration-300"
+            >
+              <h3 class="text-xl font-semibold text-white mb-2">
+                Luxury Real Estate Platform
+              </h3>
+              <p class="text-gray-200 mb-3">Web Design, Development</p>
+              <a href="#" class="text-secondary font-medium flex items-center">
+                View Project
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Portfolio Item 6 -->
+          <div class="portfolio-item relative rounded-lg overflow-hidden group">
+            <img
+              src="https://readdy.ai/api/search-image?query=educational%20platform%20interface%20with%20blue%20color%20scheme%2C%20course%20listings%2C%20video%20player%2C%20progress%20tracking%2C%20quiz%20system%2C%20certificate%20generation%2C%20student%20dashboard%2C%20instructor%20profiles&width=600&height=450&seq=7&orientation=landscape"
+              alt="Educational Platform"
+              class="w-full h-72 object-cover object-top"
+            />
+            <div
+              class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-end p-6 opacity-0 transition-opacity duration-300"
+            >
+              <h3 class="text-xl font-semibold text-white mb-2">
+                Online Learning Platform
+              </h3>
+              <p class="text-gray-200 mb-3">Web App, UI/UX Design</p>
+              <a href="#" class="text-secondary font-medium flex items-center">
+                View Project
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="border-2 border-primary text-primary px-6 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-all whitespace-nowrap"
+            >View All Projects</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Latest Insights
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Stay updated with the latest trends, technologies, and best
+            practices in the digital world through our insightful articles.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Blog Post 1 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img
+              src="https://readdy.ai/api/search-image?query=web%20development%20trends%202025%2C%20modern%20coding%20environment%2C%20developers%20working%20on%20projects%2C%20programming%20languages%20visualization%2C%20future%20of%20web%20development%2C%20innovative%20web%20technologies%2C%20digital%20transformation&width=600&height=400&seq=8&orientation=landscape"
+              alt="Web Development Trends"
+              class="w-full h-56 object-cover object-top"
+            />
+            <div class="p-6">
+              <div class="flex items-center text-sm text-gray-500 mb-3">
+                <span>June 15, 2025</span>
+                <span class="mx-2">•</span>
+                <span>Web Development</span>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Top Web Development Trends to Watch in 2025
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Explore the cutting-edge technologies and methodologies that are
+                reshaping the web development landscape and how they can benefit
+                your business.
+              </p>
+              <a href="#" class="text-secondary font-medium flex items-center">
+                Read More
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Blog Post 2 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img
+              src="https://readdy.ai/api/search-image?query=UI%20UX%20design%20principles%2C%20user%20interface%20mockups%2C%20wireframes%2C%20design%20thinking%20process%2C%20color%20schemes%20with%20blue%2C%20user%20experience%20journey%20mapping%2C%20mobile%20and%20desktop%20interfaces&width=600&height=400&seq=9&orientation=landscape"
+              alt="UI/UX Design Principles"
+              class="w-full h-56 object-cover object-top"
+            />
+            <div class="p-6">
+              <div class="flex items-center text-sm text-gray-500 mb-3">
+                <span>June 10, 2025</span>
+                <span class="mx-2">•</span>
+                <span>UI/UX Design</span>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Essential UI/UX Design Principles for Better Conversion
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Learn how thoughtful user interface and experience design can
+                significantly improve your website's conversion rates and
+                customer satisfaction.
+              </p>
+              <a href="#" class="text-secondary font-medium flex items-center">
+                Read More
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Blog Post 3 -->
+          <div class="bg-white rounded-lg overflow-hidden shadow-sm">
+            <img
+              src="https://readdy.ai/api/search-image?query=digital%20marketing%20strategy%20visualization%2C%20SEO%20analytics%20dashboard%2C%20social%20media%20campaign%20planning%2C%20content%20marketing%20calendar%2C%20online%20advertising%20platforms%2C%20marketing%20ROI%20charts%2C%20blue%20color%20scheme&width=600&height=400&seq=10&orientation=landscape"
+              alt="Digital Marketing Strategies"
+              class="w-full h-56 object-cover object-top"
+            />
+            <div class="p-6">
+              <div class="flex items-center text-sm text-gray-500 mb-3">
+                <span>June 5, 2025</span>
+                <span class="mx-2">•</span>
+                <span>Digital Marketing</span>
+              </div>
+              <h3 class="text-xl font-semibold text-primary mb-3">
+                Effective Digital Marketing Strategies for Small Businesses
+              </h3>
+              <p class="text-gray-600 mb-4">
+                Discover cost-effective digital marketing approaches that can
+                help small businesses compete with larger competitors and
+                achieve significant growth.
+              </p>
+              <a href="#" class="text-secondary font-medium flex items-center">
+                Read More
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="#"
+            class="border-2 border-primary text-primary px-6 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-all whitespace-nowrap"
+            >View All Articles</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Client Testimonials
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Don't just take our word for it. Here's what our clients have to say
+            about their experience working with us.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="service-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300">
+                <div class="flex items-center mb-6">
+                  <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                    <img
+                      src="https://readdy.ai/api/search-image?query=professional%20business%20woman%20portrait%2C%20confident%2C%20smiling%2C%20corporate%20attire%2C%20headshot%2C%20neutral%20background%2C%20high%20quality%2C%20realistic&width=200&height=200&seq=11&orientation=squarish"
+                      alt="Sarah Johnson"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-semibold text-primary">
+                      Sarah Johnson
+                    </h4>
+                    <p class="text-gray-600">CEO, TechVision Inc.</p>
+                  </div>
+                  <div class="ml-auto flex">
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                  </div>
+                </div>
+                <p class="text-gray-700 italic">
+                  "Working with this agency has been transformative for our
+                  business. Their team's expertise in web development and
+                  digital marketing helped us increase our online visibility and
+                  customer engagement significantly. The results have exceeded
+                  our expectations, and we continue to rely on their services
+                  for our digital needs."
+                </p>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="service-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300">
+                <div class="flex items-center mb-6">
+                  <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                    <img
+                      src="https://readdy.ai/api/search-image?query=professional%20business%20man%20portrait%2C%20confident%2C%20smiling%2C%20corporate%20attire%2C%20headshot%2C%20neutral%20background%2C%20high%20quality%2C%20realistic&width=200&height=200&seq=12&orientation=squarish"
+                      alt="Michael Chen"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-semibold text-primary">
+                      Michael Chen
+                    </h4>
+                    <p class="text-gray-600">
+                      Marketing Director, GreenLeaf Retail
+                    </p>
+                  </div>
+                  <div class="ml-auto flex">
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                  </div>
+                </div>
+                <p class="text-gray-700 italic">
+                  "The e-commerce solution developed by this team revolutionized
+                  our online sales process. Not only did they deliver a visually
+                  stunning website, but the functionality and user experience
+                  have led to a 200% increase in our conversion rate. Their
+                  ongoing support and optimization services continue to drive
+                  our success."
+                </p>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="service-card bg-white p-8 rounded-lg shadow-sm transition-all duration-300">
+                <div class="flex items-center mb-6">
+                  <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                    <img
+                      src="https://readdy.ai/api/search-image?query=professional%20business%20woman%20portrait%2C%20confident%2C%20smiling%2C%20corporate%20attire%2C%20headshot%2C%20neutral%20background%2C%20high%20quality%2C%20realistic&width=200&height=200&seq=13&orientation=squarish"
+                      alt="Emily Rodriguez"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h4 class="text-lg font-semibold text-primary">
+                      Emily Rodriguez
+                    </h4>
+                    <p class="text-gray-600">Founder, Wellness Hub</p>
+                  </div>
+                  <div class="ml-auto flex">
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                    <i class="ri-star-fill text-yellow-400"></i>
+                  </div>
+                </div>
+                <p class="text-gray-700 italic">
+                  "As a startup founder, I needed a digital partner who
+                  understood my vision and could bring it to life within my
+                  budget constraints. This agency not only delivered a beautiful
+                  website and mobile app but also provided valuable insights
+                  that helped shape our digital strategy. Their team's
+                  dedication and expertise have been instrumental in our early
+                  success."
+                </p>
+            </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+            Get In Touch
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Ready to start your next project? Contact us today for a free
+            consultation and let's discuss how we can help you achieve your
+            digital goals.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact Information -->
+          <div>
+            <h3 class="text-2xl font-semibold text-primary mb-6">
+              Contact Information
+            </h3>
+
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4"
+                >
+                  <i class="ri-map-pin-line ri-lg text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary mb-1">
+                    Our Location
+                  </h4>
+                  <p class="text-gray-600">
+                    123 Innovation Drive, Tech District<br />San Francisco, CA
+                    94107
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4"
+                >
+                  <i class="ri-mail-line ri-lg text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary mb-1">
+                    Email Us
+                  </h4>
+                  <p class="text-gray-600">
+                    info@yourdigitalagency.com<br />support@yourdigitalagency.com
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4"
+                >
+                  <i class="ri-phone-line ri-lg text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary mb-1">Call Us</h4>
+                  <p class="text-gray-600">
+                    +1 (415) 555-1234<br />+1 (415) 555-5678
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4"
+                >
+                  <i class="ri-time-line ri-lg text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="text-lg font-medium text-primary mb-1">
+                    Working Hours
+                  </h4>
+                  <p class="text-gray-600">
+                    Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM -
+                    2:00 PM
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <h4 class="text-lg font-medium text-primary mb-4">Follow Us</h4>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-primary hover:bg-blue-200 transition-colors"
+                >
+                  <i class="ri-facebook-fill"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-primary hover:bg-blue-200 transition-colors"
+                >
+                  <i class="ri-twitter-fill"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-primary hover:bg-blue-200 transition-colors"
+                >
+                  <i class="ri-instagram-fill"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-primary hover:bg-blue-200 transition-colors"
+                >
+                  <i class="ri-linkedin-fill"></i>
+                </a>
+                <a
+                  href="#"
+                  class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-primary hover:bg-blue-200 transition-colors"
+                >
+                  <i class="ri-dribbble-fill"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="text-2xl font-semibold text-primary mb-6">
+              Send Us a Message
+            </h3>
+
+            <form id="contactForm">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div>
+                  <label
+                    for="name"
+                    class="block text-sm font-medium text-gray-700 mb-2"
+                    >Your Name</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    class="w-full px-4 py-3 border border-gray-300 rounded focus:border-secondary"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    for="email"
+                    class="block text-sm font-medium text-gray-700 mb-2"
+                    >Your Email</label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-4 py-3 border border-gray-300 rounded focus:border-secondary"
+                    placeholder="john@example.com"
+                  />
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <label
+                  for="subject"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Subject</label
+                >
+                <input
+                  type="text"
+                  id="subject"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:border-secondary"
+                  placeholder="How can we help you?"
+                />
+              </div>
+
+              <div class="mb-6">
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-700 mb-2"
+                  >Your Message</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-3 border border-gray-300 rounded focus:border-secondary"
+                  placeholder="Tell us about your project..."
+                ></textarea>
+              </div>
+
+              <div class="mb-6">
+                <label class="custom-checkbox">
+                  <input type="checkbox" />
+                  <span class="checkmark"></span>
+                  <span class="ml-2"
+                    >I agree to the
+                    <a href="#" class="text-secondary">Terms of Service</a> and
+                    <a href="#" class="text-secondary">Privacy Policy</a></span
+                  >
+                </label>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="mt-16 rounded-lg overflow-hidden h-96 bg-gray-200">
+          <div
+            style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;"
+            class="w-full h-full"
+          ></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white pt-16 pb-6">
+      <div class="container mx-auto px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
+        >
+          <!-- Company Info -->
+          <div>
+            <a
+              href="#"
+              class="text-white font-['Pacifico'] text-2xl mb-6 inline-block"
+              >logo</a
+            >
+            <p class="text-gray-300 mb-6">
+              We create innovative digital solutions that help businesses thrive
+              in the modern landscape. Our team of experts delivers results that
+              exceed expectations.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-300 hover:text-white transition-colors"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-300 hover:text-white transition-colors"
+              >
+                <i class="ri-twitter-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-300 hover:text-white transition-colors"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="text-gray-300 hover:text-white transition-colors"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#home"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#services"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#portfolio"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#blog"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#testimonials"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Services -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">Our Services</h4>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Web Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >UI/UX Design</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Digital Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Mobile App Development</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >E-Commerce Solutions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-300 hover:text-secondary transition-colors"
+                  >Cloud Solutions</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Newsletter -->
+          <div>
+            <h4 class="text-lg font-semibold mb-6">
+              Subscribe to Our Newsletter
+            </h4>
+            <p class="text-gray-300 mb-4">
+              Stay updated with our latest news, articles, and projects.
+            </p>
+            <form class="mb-4">
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  class="w-full px-4 py-3 border-none rounded-l text-gray-800"
+                />
+                <button
+                  type="submit"
+                  class="bg-secondary text-primary px-4 py-3 !rounded-r-button font-medium hover:bg-opacity-90 transition-all whitespace-nowrap"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+            <div class="flex items-center space-x-4">
+              <span class="text-gray-300">We accept:</span>
+              <div class="flex space-x-2">
+                <i class="ri-visa-fill text-gray-300"></i>
+                <i class="ri-mastercard-fill text-gray-300"></i>
+                <i class="ri-paypal-fill text-gray-300"></i>
+                <i class="ri-apple-fill text-gray-300"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 pt-6">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 text-sm mb-4 md:mb-0">
+              © 2025 Your Digital Agency. All rights reserved.
+            </p>
+            <div class="flex space-x-6">
+              <a
+                href="#"
+                class="text-gray-400 text-sm hover:text-secondary transition-colors"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 text-sm hover:text-secondary transition-colors"
+                >Terms of Service</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 text-sm hover:text-secondary transition-colors"
+                >Cookie Policy</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script id="navbarScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 50) {
+            navbar.classList.add("nav-scrolled");
+          } else {
+            navbar.classList.remove("nav-scrolled");
+          }
+        });
+
+        // Initial check
+        if (window.scrollY > 50) {
+          navbar.classList.add("nav-scrolled");
+        }
+      });
+    </script>
+
+    <script id="testimonialSliderScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        // Testimonial section - using grid layout instead of slider
+      });
+    </script>
+
+    <script id="contactFormScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("contactForm");
+
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const subject = document.getElementById("subject").value;
+          const message = document.getElementById("message").value;
+
+          // Simple validation
+          if (!name || !email || !subject || !message) {
+            alert("Please fill in all fields");
+            return;
+          }
+
+          // Here you would normally send the form data to your server
+          // For demo purposes, just show a success message
+          alert("Thank you for your message! We will get back to you soon.");
+          contactForm.reset();
+        });
+      });
+    </script>
+
+    <script id="portfolioFilterScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(
+          "#portfolio .inline-flex button",
+        );
+
+        filterButtons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Remove active class from all buttons
+            filterButtons.forEach((btn) => {
+              btn.classList.remove("bg-primary", "text-white");
+              btn.classList.add("text-gray-600", "hover:bg-gray-200");
+            });
+
+            // Add active class to clicked button
+            this.classList.add("bg-primary", "text-white");
+            this.classList.remove("text-gray-600", "hover:bg-gray-200");
+
+            // Here you would normally filter the portfolio items
+            // For demo purposes, we're just changing the button styles
+          });
+        });
+      });
+    </script>
+    <script id="smoothScrollScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll('a[href^="#"]');
+
+        links.forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute("href");
+            if (targetId === "#") return;
+
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+              const offsetTop = targetElement.offsetTop - 80; // Adjust for navbar height
+
+              window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
