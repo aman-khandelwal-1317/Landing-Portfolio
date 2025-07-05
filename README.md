@@ -4,7 +4,32 @@ This repository contains a collection of modern, responsive landing page templat
 
 ## Projects
 
-### 1. Velocity Motors (Automotive)
+### 1. LogoCraft AI
+A modern landing page template for an AI-powered logo generation service, featuring both light and dark modes.
+
+<div style="display: flex; justify-content: space-between; margin: 20px 0;">
+    <div style="flex: 1; text-align: center;">
+        <img src="images/ailogo.png" alt="LogoCraft AI - Light Mode" style="max-width: 90%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px;">
+        <p style="margin-top: 8px; color: #64748b;">Light Mode</p>
+    </div>
+    <div style="flex: 1; text-align: center;">
+        <img src="images/ailogo-dark.png" alt="LogoCraft AI - Dark Mode" style="max-width: 90%; height: auto; border: 1px solid #334155; border-radius: 8px;">
+        <p style="margin-top: 8px; color: #64748b;">Dark Mode</p>
+    </div>
+</div>
+
+**Template Features:**
+- Dark and light mode support
+- Responsive design for all devices
+- Showcase section for logo examples
+- Feature highlights section
+- Testimonials section
+- Pricing plans section
+- Contact form
+
+---
+
+### 2. Velocity Motors (Automotive)
 A premium automotive landing page template featuring sleek design and modern UI components.
 
 ![Velocity Motors](images/velocity.png)

@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>AI Logo Generator | Create Stunning Logos Instantly</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4F46E5;
+            --primary-light: #818CF8;
+            --accent: #F59E0B;
+            --dark: #0F172A;
+            --light: #F8FAFC;
+        }
+        
+        /* Dark mode styles */
+        .dark {
+            --tw-bg-opacity: 1;
+            --tw-text-opacity: 1;
+        }
+        
+        .dark body {
+            background-color: #111827;
+            color: #f3f4f6;
+        }
+        
+        .dark .bg-white {
+            background-color: #1f2937 !important;
+            color: #f3f4f6;
+        }
+        
+        .dark .text-gray-600 {
+            color: #9ca3af;
+        }
+        
+        .dark .text-gray-900 {
+            color: #f9fafb;
+        }
+        
+        .dark .border-gray-200 {
+            border-color: #374151;
+        }
+        
+        .dark .hover\:bg-gray-50:hover {
+            background-color: #1f2937;
+        }
+        
+        /* Text colors in dark mode */
+        .dark .text-gray-700 {
+            color: #e5e7eb;
+        }
+        
+        .dark .text-gray-500 {
+            color: #9ca3af;
+        }
+        
+        .dark .text-gray-400 {
+            color: #6b7280;
+        }
+        
+        /* Form elements in dark mode */
+        .dark input,
+        .dark textarea,
+        .dark select {
+            background-color: #1f2937;
+            border-color: #374151;
+            color: #f3f4f6;
+        }
+        
+        .dark input::placeholder,
+        .dark textarea::placeholder {
+            color: #6b7280;
+        }
+        
+        /* Buttons in dark mode */
+        .dark .btn-primary {
+            background-color: #4f46e5;
+            color: white;
+        }
+        
+        .dark .btn-primary:hover {
+            background-color: #4338ca;
+        }
+        
+        .dark .btn-secondary {
+            background-color: #374151;
+            color: white;
+        }
+        
+        .dark .btn-secondary:hover {
+            background-color: #4b5563;
+        }
+        
+        /* Navigation in dark mode */
+        .dark .nav-link {
+            color: #e5e7eb;
+        }
+        
+        .dark .nav-link:hover {
+            color: #a5b4fc;
+        }
+        
+        .dark .bg-gradient-to-br {
+            background: linear-gradient(to bottom right, #1f2937, #111827);
+        }
+        
+        /* Hero section dark mode */
+        .dark .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+        }
+        
+        /* Feature cards dark mode */
+        .dark .feature-card {
+            background-color: #1f2937;
+            border: 1px solid #374151;
+        }
+        
+        .dark .feature-card:hover {
+            border-color: #4f46e5;
+            box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.1), 0 10px 10px -5px rgba(79, 70, 229, 0.04);
+        }
+        
+        /* Testimonials dark mode */
+        .dark .testimonial-card {
+            background-color: #1f2937;
+            border: 1px solid #374151;
+        }
+        
+        .dark .testimonial-card:hover {
+            border-color: #4f46e5;
+        }
+        
+        /* FAQ dark mode */
+        .dark .faq-item {
+            background-color: #1f2937;
+            border-color: #374151;
+        }
+        
+        .dark .faq-item:hover {
+            border-color: #4f46e5;
+        }
+        
+        /* Pricing cards dark mode */
+        .dark .pricing-card {
+            background-color: #1f2937;
+            border: 1px solid #374151;
+        }
+        
+        .dark .pricing-card.popular {
+            border-color: #4f46e5;
+            background: linear-gradient(135deg, #1e1b4b 0%, #1e3a8a 100%);
+        }
+        
+        /* CTA section dark mode */
+        .dark .cta-section {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+        }
+        
+        /* Footer dark mode */
+        .dark footer {
+            background-color: #111827;
+            border-top: 1px solid #374151;
+        }
+        
+        .dark footer a:hover {
+            color: #ffffff;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #F8FAFC;
+            color: #0F172A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #4F46E5 0%, #818CF8 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(90deg, #4F46E5 0%, #818CF8 100%);
+            color: white;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(79, 70, 229, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(79, 70, 229, 0.3);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: #4F46E5;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 12px;
+            border: 2px solid #E2E8F0;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: #F8FAFC;
+            border-color: #4F46E5;
+        }
+        
+        .nav-link {
+            color: #64748B;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #4F46E5;
+            background: rgba(79, 70, 229, 0.1);
+        }
+        
+        .floating {
+            animation: floating 8s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.6;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="antialiased bg-[#F8FAFC] text-[#0F172A] overflow-x-hidden">
+    <!-- Animated Background Elements -->
+    <div class="blob w-96 h-96 bg-purple-400 top-0 left-1/4"></div>
+    <div class="blob w-80 h-80 bg-blue-400 bottom-0 right-1/4"></div>
+    <div class="blob w-64 h-64 bg-indigo-300 top-1/2 right-1/3"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full py-4 px-4 sm:px-6 z-50 transition-all duration-300 bg-transparent" id="navbar" style="left: 0; right: 0;">
+        <div class="w-full px-2 mx-auto flex items-center justify-between">
+            <a href="#" class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white hover:opacity-80 transition-opacity whitespace-nowrap">AI Logo<span class="text-indigo-600 dark:text-indigo-400">Craft</span></a>
+            
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#features" class="px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-md text-base font-medium transition-colors duration-200">Features</a>
+                <a href="#how-it-works" class="px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-md text-base font-medium transition-colors duration-200">How It Works</a>
+                <a href="#showcase" class="px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-md text-base font-medium transition-colors duration-200">Showcase</a>
+                <a href="#testimonials" class="px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-md text-base font-medium transition-colors duration-200">Testimonials</a>
+                <a href="#pricing" class="px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-md text-base font-medium transition-colors duration-200">Pricing</a>
+                <a href="#faq" class="px-3 py-2 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-md text-base font-medium transition-colors duration-200">FAQ</a>
+                <!-- Dark Mode Toggle -->
+                <button id="theme-toggle" type="button" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
+                    <svg id="theme-toggle-dark-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                    </svg>
+                    <svg id="theme-toggle-light-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <a href="#pricing" class="ml-2 px-6 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-full transition-colors duration-200 dark:bg-indigo-700 dark:hover:bg-indigo-600 shadow-md hover:shadow-lg">Get Started</a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card mt-4 p-6 rounded-xl shadow-xl mx-4">
+            <div class="flex flex-col space-y-3">
+                <a href="#features" class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">Features</a>
+                <a href="#how-it-works" class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">How It Works</a>
+                <a href="#pricing" class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">Pricing</a>
+                <a href="#testimonials" class="block px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 rounded-lg transition-colors">Testimonials</a>
+                <a href="#pricing" class="mt-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-full transition-colors duration-200 dark:bg-indigo-700 dark:hover:bg-indigo-600 shadow-md hover:shadow-lg text-center w-full flex items-center justify-center">
+                    Get Started
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-20 pb-24 px-6 relative overflow-hidden hero-gradient">
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <!-- Animated Badge -->
+            <div class="inline-flex items-center bg-white px-4 py-2 rounded-full shadow-sm mb-8 animate-bounce">
+                <span class="w-2 h-2 bg-[#4F46E5] rounded-full mr-2"></span>
+                <span class="text-sm font-medium text-[#4F46E5]">The Future of Logo Design is Here</span>
+                <span class="ml-2 text-yellow-400">✨</span>
+            </div>
+            
+            <!-- Main Headline -->
+            <h1 class="text-5xl md:text-7xl font-bold mb-8 leading-tight">
+                Design Stunning Logos <br/>
+                <span class="gradient-text">Powered by AI</span>
+            </h1>
+            
+            <!-- Subheadline -->
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+                Create professional, unique logos in seconds. No design skills needed. Perfect for startups, businesses, and personal brands.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-24">
+                <a href="#pricing" class="px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-full transition-colors duration-200 dark:bg-indigo-700 dark:hover:bg-indigo-600 shadow-md hover:shadow-lg inline-flex items-center justify-center">
+                    Create Your Logo Now
+                    <i class="fas fa-arrow-right ml-3"></i>
+                </a>
+                <a href="#how-it-works" class="px-8 py-4 bg-white dark:bg-gray-800 text-indigo-600 dark:text-indigo-400 font-semibold rounded-full border-2 border-indigo-100 dark:border-gray-700 hover:bg-indigo-50 dark:hover:bg-gray-700 transition-colors duration-200 inline-flex items-center justify-center">
+                    <i class="fas fa-play-circle mr-3"></i>
+                    Watch Demo
+                </a>
+            </div>
+            
+            <!-- Hero Visual -->
+            <div class="relative w-full max-w-5xl mx-auto px-4 sm:px-6" style="z-index: 10;">
+                <!-- Floating Card 1 -->
+                <div class="hidden sm:block absolute -top-10 sm:-top-50 -left-4 sm:-left-10 w-40 sm:w-56 md:w-64 h-40 sm:h-56 md:h-64 bg-white rounded-2xl shadow-2xl p-4 sm:p-6 transform rotate-3 sm:rotate-6 floating" style="animation-delay: 0s; z-index: 20;">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg bg-indigo-100 flex items-center justify-center mb-2 sm:mb-4">
+                        <i class="fas fa-palette text-indigo-600 text-base sm:text-lg md:text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2">Custom Designs</h4>
+                    <p class="text-xs sm:text-sm text-gray-500">Tailored to your brand</p>
+                </div>
+                
+                <!-- Main Floating Card -->
+                <div class="relative bg-white rounded-3xl shadow-2xl overflow-hidden border-4 sm:border-8 border-white transform rotate-0 sm:rotate-3 floating" style="animation-delay: 0.2s; max-width: 100%; z-index: 10;">
+                    <div class="p-0.5 sm:p-1 bg-gradient-to-r from-indigo-500 to-purple-600">
+                        <div class="bg-white p-4 sm:p-6 md:p-8">
+                            <div class="flex justify-between items-center mb-4 sm:mb-6">
+                                <div class="text-left">
+                                    <h3 class="text-lg sm:text-xl md:text-2xl font-bold">Your Brand</h3>
+                                    <p class="text-gray-500 text-xs sm:text-sm">AI-Generated Logo</p>
+                                </div>
+                                <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg bg-indigo-100 flex items-center justify-center">
+                                    <i class="fas fa-magic text-indigo-600 text-base sm:text-lg md:text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-3 sm:p-4 md:p-6 mb-4 sm:mb-6">
+                                <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 mx-auto bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl md:text-3xl font-bold">
+                                    L
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 sm:gap-3">
+                                <div class="h-1.5 sm:h-2 bg-gray-200 rounded-full"></div>
+                                <div class="h-1.5 sm:h-2 bg-gray-200 rounded-full"></div>
+                                <div class="h-1.5 sm:h-2 bg-gray-200 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Floating Card 2 -->
+                <div class="hidden sm:block absolute -bottom-6 sm:-bottom-10 -right-4 sm:-right-10 w-36 sm:w-48 md:w-56 h-36 sm:h-48 md:h-56 bg-white rounded-2xl shadow-2xl p-4 sm:p-6 transform -rotate-3 sm:-rotate-6 floating" style="animation-delay: 0.4s; z-index: 20;">
+                    <div class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-lg bg-purple-100 flex items-center justify-center mb-2 sm:mb-4">
+                        <i class="fas fa-bolt text-purple-600 text-base sm:text-lg md:text-xl"></i>
+                    </div>
+                    <h4 class="font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2">Lightning Fast</h4>
+                    <p class="text-xs sm:text-sm text-gray-500">Ready in under 60s</p>
+                </div>
+            </div>
+            
+            <!-- Trust Badges -->
+            <div class="mt-24">
+                <p class="text-sm text-gray-500 mb-6">TRUSTED BY INNOVATIVE COMPANIES</p>
+                <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-70">
+                    <span class="text-xl font-bold text-gray-700">StartupX</span>
+                    <span class="text-xl font-bold text-gray-700">NovaTech</span>
+                    <span class="text-xl font-bold text-gray-700">Lumos</span>
+                    <span class="text-xl font-bold text-gray-700">Quantum</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 px-6 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Powerful Features for <span class="gradient-text">Perfect Logos</span></h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to create a professional logo that stands out</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-indigo-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-magic text-2xl text-indigo-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI-Powered Design</h3>
+                    <p class="text-gray-600">Our advanced AI creates unique logos based on your preferences and industry trends.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-purple-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-palette text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Custom Colors</h3>
+                    <p class="text-gray-600">Choose from millions of colors or enter your brand's exact color codes.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-blue-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-font text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">500+ Fonts</h3>
+                    <p class="text-gray-600">Extensive font library to match your brand's personality perfectly.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-amber-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-sync-alt text-2xl text-amber-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Unlimited Revisions</h3>
+                    <p class="text-gray-600">Tweak your design until it's perfect with our unlimited revision policy.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-file-download text-2xl text-emerald-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">All File Formats</h3>
+                    <p class="text-gray-600">Download your logo in PNG, JPG, SVG, and PDF formats for any use case.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                    <div class="w-14 h-14 rounded-xl bg-rose-100 flex items-center justify-center mb-6">
+                        <i class="fas fa-headset text-2xl text-rose-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">24/7 Support</h3>
+                    <p class="text-gray-600">Our design experts are always here to help you with your logo.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-purple-200 rounded-full filter blur-3xl opacity-20 -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-indigo-200 rounded-full filter blur-3xl opacity-20 -z-10"></div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-24 px-6 bg-gradient-to-br from-indigo-50 to-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">How It <span class="gradient-text">Works</span></h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Create your perfect logo in just a few simple steps</p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-200 to-purple-200 transform -translate-x-1/2"></div>
+                
+                <!-- Step 1 -->
+                <div class="relative z-10 mb-16 md:mb-24 flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-16 mb-8 md:mb-0 text-center md:text-right">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 text-indigo-600 text-xl font-bold mb-4 md:ml-auto md:mr-0">1</div>
+                        <h3 class="text-2xl font-bold mb-3">Tell Us About Your Brand</h3>
+                        <p class="text-gray-600">Answer a few questions about your business, style preferences, and vision.</p>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-16">
+                        <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-lg">
+                            <div class="h-40 sm:h-48 w-full bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-comment-alt text-4xl sm:text-5xl text-indigo-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="relative z-10 mb-16 md:mb-24 flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:order-2 md:pl-16 mb-8 md:mb-0 text-center md:text-left">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-100 text-purple-600 text-xl font-bold mb-4 md:mr-auto md:ml-0">2</div>
+                        <h3 class="text-2xl font-bold mb-3">AI Generates Logo Concepts</h3>
+                        <p class="text-gray-600">Our AI creates multiple unique logo designs based on your input.</p>
+                    </div>
+                    <div class="w-full md:w-1/2 md:order-first md:pr-16">
+                        <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-lg">
+                            <div class="h-40 sm:h-48 w-full bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-magic text-4xl sm:text-5xl text-purple-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col md:flex-row items-center">
+                    <div class="md:w-1/2 md:pr-16 mb-8 md:mb-0 text-center md:text-right">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-indigo-100 text-indigo-600 text-xl font-bold mb-4 md:ml-auto md:mr-0">3</div>
+                        <h3 class="text-2xl font-bold mb-3">Customize & Download</h3>
+                        <p class="text-gray-600">Tweak colors, fonts, and layout, then download your perfect logo.</p>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-16">
+                        <div class="bg-white p-4 sm:p-6 rounded-2xl shadow-lg">
+                            <div class="h-40 sm:h-48 w-full bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-download text-4xl sm:text-5xl text-blue-200"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-1/4 right-10 w-32 h-32 bg-purple-100 rounded-full filter blur-3xl opacity-50 -z-10"></div>
+        <div class="absolute bottom-1/4 left-10 w-40 h-40 bg-indigo-100 rounded-full filter blur-3xl opacity-50 -z-10"></div>
+    </section>
+
+    <!-- Logo Showcase Section -->
+    <section id="showcase" class="py-24 px-6 relative overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Logo <span class="gradient-text">Showcase</span></h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">See what our AI can create. All logos are 100% unique and customizable.</p>
+            </div>
+            
+            <!-- Logo Categories -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button class="px-5 py-2 rounded-full bg-indigo-600 text-white text-sm font-medium transition-all duration-200 hover:bg-indigo-700 active:scale-95">All</button>
+                <button class="px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium transition-all duration-200 hover:bg-gray-50 active:scale-95">Business</button>
+                <button class="px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium transition-all duration-200 hover:bg-gray-50 active:scale-95">Tech</button>
+                <button class="px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium transition-all duration-200 hover:bg-gray-50 active:scale-95">Food</button>
+                <button class="px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium transition-all duration-200 hover:bg-gray-50 active:scale-95">Fashion</button>
+                <button class="px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-200 text-sm font-medium transition-all duration-200 hover:bg-gray-50 active:scale-95">Health</button>
+            </div>
+            
+            <!-- Logo Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Logo 1 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div class="aspect-square flex items-center justify-center p-4">
+                        <div class="w-full h-full bg-gradient-to-br from-indigo-100 to-purple-100 rounded-xl flex items-center justify-center">
+                            <span class="text-3xl font-bold text-indigo-600">L</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Luminary</h4>
+                        <p class="text-sm text-gray-500">Tech Startup</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+                        <button class="px-6 py-2 bg-white text-indigo-600 rounded-full font-medium text-sm hover:bg-indigo-50 transition-colors">Customize</button>
+                    </div>
+                </div>
+                
+                <!-- Logo 2 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div class="aspect-square flex items-center justify-center p-4">
+                        <div class="w-full h-full bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl flex items-center justify-center">
+                            <span class="text-3xl font-bold text-amber-600">B</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Bloom</h4>
+                        <p class="text-sm text-gray-500">Beauty Brand</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+                        <button class="px-6 py-2 bg-white text-amber-600 rounded-full font-medium text-sm hover:bg-amber-50 transition-colors">Customize</button>
+                    </div>
+                </div>
+                
+                <!-- Logo 3 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div class="aspect-square flex items-center justify-center p-4">
+                        <div class="w-full h-full bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl flex items-center justify-center">
+                            <span class="text-3xl font-bold text-blue-600">W</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Wave</h4>
+                        <p class="text-sm text-gray-500">Surf Shop</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+                        <button class="px-6 py-2 bg-white text-blue-600 rounded-full font-medium text-sm hover:bg-blue-50 transition-colors">Customize</button>
+                    </div>
+                </div>
+                
+                <!-- Logo 4 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div class="aspect-square flex items-center justify-center p-4">
+                        <div class="w-full h-full bg-gradient-to-br from-emerald-100 to-teal-100 rounded-xl flex items-center justify-center">
+                            <span class="text-3xl font-bold text-emerald-600">G</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h4 class="font-semibold text-gray-900">GreenLeaf</h4>
+                        <p class="text-sm text-gray-500">Organic Food</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+                        <button class="px-6 py-2 bg-white text-emerald-600 rounded-full font-medium text-sm hover:bg-emerald-50 transition-colors">Customize</button>
+                    </div>
+                </div>
+                
+                <!-- Logo 5 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div class="aspect-square flex items-center justify-center p-4">
+                        <div class="w-full h-full bg-gradient-to-br from-rose-100 to-pink-100 rounded-xl flex items-center justify-center">
+                            <span class="text-3xl font-bold text-rose-600">H</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Haven</h4>
+                        <p class="text-sm text-gray-500">Real Estate</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+                        <button class="px-6 py-2 bg-white text-rose-600 rounded-full font-medium text-sm hover:bg-rose-50 transition-colors">Customize</button>
+                    </div>
+                </div>
+                
+                <!-- Logo 6 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div class="aspect-square flex items-center justify-center p-4">
+                        <div class="w-full h-full bg-gradient-to-br from-violet-100 to-purple-100 rounded-xl flex items-center justify-center">
+                            <span class="text-3xl font-bold text-violet-600">M</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Muse</h4>
+                        <p class="text-sm text-gray-500">Creative Agency</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+                        <button class="px-6 py-2 bg-white text-violet-600 rounded-full font-medium text-sm hover:bg-violet-50 transition-colors">Customize</button>
+                    </div>
+                </div>
+                
+                <!-- Logo 7 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div class="aspect-square flex items-center justify-center p-4">
+                        <div class="w-full h-full bg-gradient-to-br from-amber-100 to-yellow-100 rounded-xl flex items-center justify-center">
+                            <span class="text-3xl font-bold text-amber-600">F</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Flare</h4>
+                        <p class="text-sm text-gray-500">Event Planning</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+                        <button class="px-6 py-2 bg-white text-amber-600 rounded-full font-medium text-sm hover:bg-amber-50 transition-colors">Customize</button>
+                    </div>
+                </div>
+                
+                <!-- Logo 8 -->
+                <div class="group relative overflow-hidden rounded-2xl bg-white p-6 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div class="aspect-square flex items-center justify-center p-4">
+                        <div class="w-full h-full bg-gradient-to-br from-sky-100 to-blue-100 rounded-xl flex items-center justify-center">
+                            <span class="text-3xl font-bold text-sky-600">A</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <h4 class="font-semibold text-gray-900">Apex</h4>
+                        <p class="text-sm text-gray-500">Consulting Firm</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl">
+                        <button class="px-6 py-2 bg-white text-sky-600 rounded-full font-medium text-sm hover:bg-sky-50 transition-colors">Customize</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <a href="#pricing" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-indigo-200 transition-all duration-300 hover:-translate-y-0.5">
+                    Create Your Logo Now
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-100 rounded-full filter blur-3xl opacity-20 -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-100 rounded-full filter blur-3xl opacity-20 -z-10"></div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 px-6 bg-gradient-to-br from-indigo-50 to-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">What Our <span class="gradient-text">Clients Say</span></h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Join thousands of satisfied customers who've created stunning logos with our AI</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 testimonial-card">
+                    <div class="flex items-center mb-6">
+                        <div class="flex-shrink-0">
+                            <img class="h-14 w-14 rounded-full object-cover" src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-500">Founder, Bloom & Co.</p>
+                            <div class="flex mt-1">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"I was blown away by how professional my logo looked after just a few clicks. The AI understood exactly what I was looking for and delivered beyond my expectations. My business cards have never looked better!"</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 testimonial-card">
+                    <div class="flex items-center mb-6">
+                        <div class="flex-shrink-0">
+                            <img class="h-14 w-14 rounded-full object-cover" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Michael Chen</h4>
+                            <p class="text-sm text-gray-500">CEO, TechNova</p>
+                            <div class="flex mt-1">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"As a startup founder, I needed a professional logo quickly and affordably. This platform delivered exactly that. The AI suggested design elements I wouldn't have thought of myself. Highly recommended!"</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 testimonial-card">
+                    <div class="flex items-center mb-6">
+                        <div class="flex-shrink-0">
+                            <img class="h-14 w-14 rounded-full object-cover" src="https://randomuser.me/api/portraits/women/67.jpg" alt="Emily Rodriguez">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-gray-900">Emily Rodriguez</h4>
+                            <p class="text-sm text-gray-500">Owner, Café Aromas</p>
+                            <div class="flex mt-1">
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                                <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">"I'm not tech-savvy at all, but this platform made it so easy to create a beautiful logo for my café. The customization options were endless, and I got exactly what I wanted. My customers love the new branding!"</p>
+                </div>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="mt-20 pt-12 border-t border-gray-200">
+                <p class="text-center text-gray-500 text-sm mb-8">TRUSTED BY THOUSANDS OF BUSINESSES WORLDWIDE</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
+                    <img src="https://via.placeholder.com/120x40?text=Forbes" alt="Forbes" class="h-8">
+                    <img src="https://via.placeholder.com/120x40?text=TechCrunch" alt="TechCrunch" class="h-8">
+                    <img src="https://via.placeholder.com/120x40?text=Entrepreneur" alt="Entrepreneur" class="h-8">
+                    <img src="https://via.placeholder.com/120x40?text=Wired" alt="Wired" class="h-8">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-1/4 left-0 w-64 h-64 bg-purple-100 rounded-full filter blur-3xl opacity-30 -z-10"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-indigo-100 rounded-full filter blur-3xl opacity-20 -z-10"></div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 px-6 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Everything you need to know about creating your perfect logo</p>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 faq-item">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors">
+                        <h3 class="text-lg font-semibold text-gray-900">How does the AI logo generator work?</h3>
+                        <svg class="w-5 h-5 text-indigo-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-content px-6 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                        <p class="text-gray-600">Our AI logo generator uses advanced machine learning algorithms to create unique logo designs based on your preferences. Simply provide some basic information about your business, style preferences, and any specific elements you'd like to include, and our AI will generate multiple logo options for you to choose from and customize.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 faq-item">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors">
+                        <h3 class="text-lg font-semibold text-gray-900">Can I customize the logos generated by the AI?</h3>
+                        <svg class="w-5 h-5 text-indigo-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-content px-6 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                        <p class="text-gray-600">Absolutely! Once the AI generates logo options, you can fully customize every aspect of your chosen design. Change colors, fonts, icons, layout, and more using our intuitive editor. You can also request revisions until you're completely satisfied with your logo.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 faq-item">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors">
+                        <h3 class="text-lg font-semibold text-gray-900">What file formats will I receive my logo in?</h3>
+                        <svg class="w-5 h-5 text-indigo-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-content px-6 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                        <p class="text-gray-600">You'll receive your logo in multiple high-resolution formats including PNG, JPG, SVG, and PDF. These formats ensure your logo looks great on any platform, from business cards to billboards. You'll also receive different size variations optimized for web, print, and social media use.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 faq-item">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors">
+                        <h3 class="text-lg font-semibold text-gray-900">How long does it take to create a logo?</h3>
+                        <svg class="w-5 h-5 text-indigo-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-content px-6 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                        <p class="text-gray-600">Our AI can generate initial logo concepts in just a few seconds. The entire process, including customization and finalization, typically takes between 15-30 minutes depending on how many revisions you'd like to make. You can work at your own pace and save your progress to continue later.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 faq-item">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors">
+                        <h3 class="text-lg font-semibold text-gray-900">Do I own the rights to my logo?</h3>
+                        <svg class="w-5 h-5 text-indigo-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-content px-6 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                        <p class="text-gray-600">Yes, once you've completed your purchase, you'll own full copyright to your logo design. You can use it for any business or personal purposes without any restrictions. We don't claim any rights to your logo, and it will never be resold or reused for other clients.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 6 -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden transition-all duration-300 faq-item">
+                    <button class="faq-toggle w-full flex justify-between items-center p-6 text-left hover:bg-gray-50 transition-colors">
+                        <h3 class="text-lg font-semibold text-gray-900">What if I need help or have special requests?</h3>
+                        <svg class="w-5 h-5 text-indigo-600 transform transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="faq-content px-6 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                        <p class="text-gray-600">Our customer support team is available 24/7 to assist you with any questions or special requests. Whether you need help with the design process, have specific requirements, or need technical assistance, we're here to help. You can reach us via live chat, email, or phone support.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-16">
+                <p class="text-gray-600 mb-6">Still have questions? We're here to help!</p>
+                <a href="#contact" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-indigo-700 bg-indigo-100 hover:bg-indigo-200 transition-colors">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    Contact Support
+                </a>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-purple-100 rounded-full filter blur-3xl opacity-20 -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-indigo-100 rounded-full filter blur-3xl opacity-20 -z-10"></div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 px-6 bg-gradient-to-br from-indigo-50 to-white relative overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Simple, Transparent <span class="gradient-text">Pricing</span></h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Choose the perfect plan for your business needs. No hidden fees, cancel anytime.</p>
+                
+                <!-- Pricing Toggle -->
+                <div class="mt-8 flex items-center justify-center">
+                    <span class="text-gray-700 font-medium mr-4">Billed Monthly</span>
+                    <div class="relative inline-block w-16 mr-2 align-middle select-none">
+                        <input type="checkbox" name="pricing-toggle" id="pricing-toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer transition-transform duration-200 ease-in-out" />
+                        <label for="pricing-toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                    </div>
+                    <div class="relative">
+                        <span class="text-gray-700 font-medium">Billed Annually</span>
+                        <span class="absolute -top-6 -right-4 bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded-full whitespace-nowrap">20% OFF</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 pricing-card">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Starter</h3>
+                        <p class="text-gray-600 mb-6">Perfect for individuals and small projects</p>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-extrabold text-gray-900 monthly-price">$25</span>
+                                <span class="text-4xl font-extrabold text-gray-900 yearly-price hidden">$20</span>
+                                <span class="ml-2 text-gray-500 font-medium">/month</span>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-1 yearly-price hidden">Billed as $240 per year</div>
+                            <div class="text-sm text-green-600 font-medium mt-1 monthly-price">Save 20% with annual billing</div>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>5 AI logo concepts</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Basic customization</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>PNG & JPG files</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                                <span>No vector files</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#" class="block w-full text-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-indigo-700 bg-indigo-100 hover:bg-indigo-200 transition-colors">
+                            Get Started
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Popular Plan -->
+                <div class="relative bg-white dark:bg-gray-900 rounded-2xl shadow-xl overflow-hidden transform scale-105 z-10 border-2 border-indigo-500 pricing-card popular">
+                    <div class="absolute top-0 right-0 bg-indigo-600 text-white text-xs font-semibold px-4 py-1 rounded-bl-lg">
+                        MOST POPULAR
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Professional</h3>
+                        <p class="text-gray-600 mb-6">Ideal for growing businesses and professionals</p>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-extrabold text-gray-900 monthly-price">$59</span>
+                                <span class="text-4xl font-extrabold text-gray-900 yearly-price hidden">$47</span>
+                                <span class="ml-2 text-gray-500 font-medium">/month</span>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-1 yearly-price hidden">Billed as $564 per year</div>
+                            <div class="text-sm text-green-600 font-medium mt-1 monthly-price">Save 20% with annual billing</div>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>15 AI logo concepts</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Full customization</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>PNG, JPG & SVG files</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Unlimited revisions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Priority support</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#" class="block w-full text-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200 btn-primary">
+                        Get Started
+                    </a>
+                    </div>
+                </div>
+                
+                <!-- Business Plan -->
+                <div class="relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 pricing-card">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Business</h3>
+                        <p class="text-gray-600 mb-6">For established businesses with advanced needs</p>
+                        
+                        <div class="mb-6">
+                            <div class="flex items-baseline">
+                                <span class="text-4xl font-extrabold text-gray-900 monthly-price">$100</span>
+                                <span class="text-4xl font-extrabold text-gray-900 yearly-price hidden">$80</span>
+                                <span class="ml-2 text-gray-500 font-medium">/month</span>
+                            </div>
+                            <div class="text-sm text-gray-500 mt-1 yearly-price hidden">Billed as $960 per year</div>
+                            <div class="text-sm text-green-600 font-medium mt-1 monthly-price">Save 20% with annual billing</div>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Unlimited AI logo concepts</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Full customization + brand guidelines</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>All file formats (PNG, JPG, SVG, PDF, EPS)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Unlimited revisions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="h-5 w-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>24/7 VIP support</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#" class="block w-full text-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 transition-colors duration-200 btn-primary">
+                        Get Started
+                    </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-6">Need a custom plan? We've got you covered.</p>
+                <a href="#contact" class="text-indigo-600 hover:text-indigo-800 font-medium inline-flex items-center">
+                    Contact our sales team
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-64 h-64 bg-indigo-100 rounded-full filter blur-3xl opacity-20 -z-10"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-100 rounded-full filter blur-3xl opacity-20 -z-10"></div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative py-24 px-6 bg-gradient-to-br from-indigo-600 to-purple-700 text-white overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to create your perfect logo?</h2>
+            <p class="text-xl text-indigo-200 mb-10 max-w-2xl mx-auto">Join thousands of businesses that trust our AI to create stunning, professional logos in minutes.</p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#pricing" class="px-8 py-4 bg-white text-indigo-700 font-semibold rounded-full hover:bg-indigo-50 transition-colors text-center">
+                    Get Started - It's Free
+                </a>
+                <a href="#how-it-works" class="px-8 py-4 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:bg-opacity-10 transition-colors text-center">
+                    See How It Works
+                </a>
+            </div>
+            
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-6 text-indigo-300 text-sm">
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 text-green-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    No credit card required
+                </div>
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 text-green-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    Cancel anytime
+                </div>
+                <div class="flex items-center">
+                    <svg class="w-5 h-5 text-green-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                    Money-back guarantee
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-indigo-500 rounded-full filter blur-3xl opacity-20"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl opacity-20"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-white rounded-full filter blur-3xl opacity-5"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl font-bold text-white">AI Logo<span class="text-indigo-400">Craft</span></span>
+                    </div>
+                    <p class="text-gray-400 mb-6">Creating stunning, professional logos with the power of AI. Perfect for startups, businesses, and creative professionals.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Twitter</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">GitHub</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.137-.353-.3-.882-.344-1.857-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.045-.975.207-1.505.344-1.858a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.353-.137.882-.3 1.857-.344C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#testimonials" class="hover:text-white transition-colors">Testimonials</a></li>
+                        <li><a href="#faq" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-500">© 2023 AI LogoCraft. All rights reserved.</p>
+                <div class="mt-4 md:mt-0 flex space-x-6">
+                    <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-500 hover:text-white transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Pricing Toggle Functionality
+        const pricingToggle = document.getElementById('pricing-toggle');
+        const monthlyPrices = document.querySelectorAll('.monthly-price');
+        const yearlyPrices = document.querySelectorAll('.yearly-price');
+        
+        pricingToggle.addEventListener('change', function() {
+            if (this.checked) {
+                // Show yearly prices
+                monthlyPrices.forEach(el => el.classList.add('hidden'));
+                yearlyPrices.forEach(el => el.classList.remove('hidden'));
+            } else {
+                // Show monthly prices
+                monthlyPrices.forEach(el => el.classList.remove('hidden'));
+                yearlyPrices.forEach(el => el.classList.add('hidden'));
+            }
+        });
+    </script>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('svg');
+                
+                // Toggle the max-height of the content
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    content.style.paddingTop = '0';
+                    content.style.paddingBottom = '0';
+                    content.style.opacity = '0';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    content.style.maxHeight = (content.scrollHeight + 24) + 'px';
+                    content.style.paddingTop = '0.5rem';
+                    content.style.paddingBottom = '1.5rem';
+                    content.style.marginBottom = '1rem';
+                    content.style.opacity = '1';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+                
+                // Close other open FAQs
+                document.querySelectorAll('.faq-toggle').forEach(otherButton => {
+                    if (otherButton !== button) {
+                        const otherContent = otherButton.nextElementSibling;
+                        const otherIcon = otherButton.querySelector('svg');
+                        otherContent.style.maxHeight = null;
+                        otherContent.style.paddingTop = '0';
+                        otherContent.style.paddingBottom = '0';
+                        otherContent.style.marginTop = '0';
+                        otherContent.style.marginBottom = '0';
+                        otherIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', !mobileMenu.classList.contains('hidden'));
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+
+    <script>
+        // Dark Mode Toggle
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        // Change the icons inside the button based on previous settings
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon?.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeToggleDarkIcon?.classList.remove('hidden');
+        }
+
+        // Toggle dark mode
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', function() {
+                // Toggle icons
+                themeToggleDarkIcon?.classList.toggle('hidden');
+                themeToggleLightIcon?.classList.toggle('hidden');
+
+                // If is set in localStorage
+                if (localStorage.getItem('color-theme')) {
+                    // If light, make dark and save in localStorage
+                    if (localStorage.getItem('color-theme') === 'light') {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('color-theme', 'dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('color-theme', 'light');
+                    }
+                } else {
+                    // If not in localStorage
+                    if (document.documentElement.classList.contains('dark')) {
+                        document.documentElement.classList.remove('dark');
+                        localStorage.setItem('color-theme', 'light');
+                    } else {
+                        document.documentElement.classList.add('dark');
+                        localStorage.setItem('color-theme', 'dark');
+                    }
+                }
+            });
+        }
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        if (navbar) {
+            let lastScroll = 0;
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                
+                // Add/remove background on scroll
+                if (currentScroll > 10) {
+                    navbar.classList.add('bg-white', 'shadow-md', 'dark:bg-gray-800');
+                    navbar.classList.remove('bg-transparent');
+                } else {
+                    navbar.classList.remove('bg-white', 'shadow-md', 'dark:bg-gray-800');
+                    navbar.classList.add('bg-transparent');
+                }
+                
+                // Hide/show navbar on scroll
+                if (currentScroll <= 0) {
+                    navbar.classList.remove('transform', '-translate-y-full');
+                    return;
+                }
+                
+                if (currentScroll > lastScroll && !navbar.classList.contains('-translate-y-full')) {
+                    // Scrolling down
+                    navbar.classList.add('transform', '-translate-y-full');
+                } else if (currentScroll < lastScroll && navbar.classList.contains('-translate-y-full')) {
+                    // Scrolling up
+                    navbar.classList.remove('transform', '-translate-y-full');
+                }
+                
+                lastScroll = currentScroll;
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.classList.add('opacity-100', 'translate-y-0');
+                    element.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on page load
+    </script>
+</body>
+</html>
