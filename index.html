@@ -95,16 +95,34 @@
     <!-- Header -->
     <header class="hero-gradient text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">Modern Landing Page Designs</h1>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Transforming Ideas into <span class="gradient-text-blue">Digital Reality</span></h1>
             <p class="text-xl md:text-2xl max-w-3xl mx-auto text-gray-300 mb-10">
-                Professional, responsive landing pages for various industries
+                Full Stack Developer | Web Enthusiast | Problem Solver <br> Crafting beautiful, functional, and scalable web applications
             </p>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="#showcase" class="px-8 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition duration-300 shadow-lg hover:shadow-xl">
-                    View Showcase
+                <a href="#about" class="px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition duration-300 flex items-center gap-2 group">
+                    <i class="fas fa-user-circle group-hover:scale-110 transition-transform"></i>
+                    About Me
                 </a>
-                <a href="#contact" class="px-8 py-3 bg-white hover:bg-gray-100 text-primary-600 font-medium rounded-lg transition duration-300 shadow-lg hover:shadow-xl">
-                    Contact Us
+                <a href="https://www.linkedin.com/in/aman-khandelwal-137bab207" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-[#0a66c2] hover:bg-[#084d94] text-white font-medium rounded-lg transition duration-300 flex items-center gap-2 group">
+                    <i class="fab fa-linkedin-in group-hover:scale-110 transition-transform"></i>
+                    LinkedIn
+                </a>
+                <a href="https://www.freelancer.com/u/Aman13171317" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-[#29b2fe] hover:bg-[#1a8fd8] text-white font-medium rounded-lg transition duration-300 flex items-center gap-2 group">
+                    <i class="fas fa-briefcase group-hover:scale-110 transition-transform"></i>
+                    Freelancer
+                </a>
+                <a href="https://github.com/aman-khandelwal-1317" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white font-medium rounded-lg transition duration-300 flex items-center gap-2 group">
+                    <i class="fab fa-github group-hover:scale-110 transition-transform"></i>
+                    GitHub
+                </a>
+            </div>
+            <div class="mt-10">
+                <a href="#projects" class="inline-flex items-center text-gray-300 hover:text-white transition-colors group">
+                    <span>Explore My Work</span>
+                    <svg class="w-5 h-5 ml-2 group-hover:translate-y-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
                 </a>
             </div>
         </div>
@@ -263,80 +281,279 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-24 px-4 bg-gray-50">
+    <!-- About Me Section -->
+    <section id="about" class="py-24 px-4 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Key Features</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 dark:text-white">About Me</h2>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Profile Image -->
+                <div class="w-full md:w-1/3 lg:w-1/4 flex justify-center">
+                    <div class="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary-500 shadow-xl">
+                        <img src="images/creator.jpg" 
+                             alt="Aman Khandelwal" 
+                             class="w-full h-full object-cover"
+                             onerror="this.src='https://ui-avatars.com/api/?name=Aman+Khandelwal&background=0ea5e9&color=fff&size=512'"
+                        >
+                    </div>
+                </div>
+                
+                <!-- About Text -->
+                <div class="w-full md:w-2/3 lg:w-3/4">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-6 text-gray-900 dark:text-white">
+                        <span class="gradient-text-blue">Aman Khandelwal</span>
+                        <span class="block text-lg font-normal text-gray-600 dark:text-gray-300 mt-1">Full Stack Web Developer</span>
+                    </h3>
+                    
+                    <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                        <p>
+                            I am a Full Stack Web Developer with 3 years of experience building production-ready web apps and admin panels.
+                        </p>
+                        <p>
+                            I've developed multiple admin dashboards and landing pages, working with technologies like Next.js, React.js, Node.js, Express, PostgreSQL, and MongoDB.
+                        </p>
+                        <p>
+                            My experience includes implementing various features such as file uploads (AWS S3/DigitalOcean), Razorpay payment integrations, Google/Apple authentication, and secure authentication flows.
+                        </p>
+                        <p>
+                            Skilled in both frontend and backend development, I focus on creating clean, scalable, and reliable solutions for real-world applications.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-8 flex flex-wrap gap-4">
+                        <a href="https://www.freelancer.com/u/Aman13171317" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-[#29b2fe] hover:bg-[#1a8fd8] text-white font-medium rounded-lg transition duration-300 flex items-center gap-2">
+                            <i class="fas fa-briefcase"></i> Freelancer
+                        </a>
+                        <a href="https://www.linkedin.com/in/aman-khandelwal-137bab207" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-[#0a66c2] hover:bg-[#084d94] text-white font-medium rounded-lg transition duration-300 flex items-center gap-2">
+                            <i class="fab fa-linkedin-in"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/aman-khandelwal-1317" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-gray-800 hover:bg-gray-900 text-white font-medium rounded-lg transition duration-300 flex items-center gap-2">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Skills -->
+            <div class="mt-16">
+                <h4 class="text-xl font-semibold mb-6 text-center dark:text-white">Technical Skills</h4>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                        Next.js
+                    </span>
+                    <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                        React.js
+                    </span>
+                    <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                        Node.js
+                    </span>
+                    <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                        Express
+                    </span>
+                    <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                        PostgreSQL
+                    </span>
+                    <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                        MongoDB
+                    </span>
+                    <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                        AWS S3
+                    </span>
+                    <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
+                        Razorpay
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-4 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 dark:text-white">Featured Projects</h2>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <div class="bg-white p-8 rounded-xl shadow-md text-center">
-                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-mobile-alt text-2xl text-primary-600"></i>
+                <!-- Project 1: ImageInPixel -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
+                    <div class="relative">
+                        <div class="absolute top-0 right-0 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-1 rounded-bl-lg font-medium">
+                            Web App
+                        </div>
+                        <img src="images/imp.png" alt="ImageInPixel - Online Image Editor" class="w-full h-64 object-contain bg-gray-50 dark:bg-gray-700 p-4">
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Fully Responsive</h3>
-                    <p class="text-gray-600">
-                        All landing pages are designed to look great on any device, from mobile phones to desktop computers.
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">ImageInPixel</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A fully client-side browser-based image editor with compression, cropping, resizing, filtering, and format conversion capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs">Next.js</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs">Tailwind CSS</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs">Client-side</span>
+                        </div>
+                        <a href="https://imageinpixel.com" class="inline-block w-full text-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-medium rounded-lg transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: MultiTools -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
+                    <div class="relative">
+                        <div class="absolute top-0 right-0 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-1 rounded-bl-lg font-medium">
+                            Web Tools
+                        </div>
+                        <img src="images/tools.png" alt="MultiTools - Online Utilities" class="w-full h-64 object-contain bg-gray-50 dark:bg-gray-700 p-4">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">ToolZeey</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A collection of essential web tools including QR code generator, color picker, password generator, unit converter, and more.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-xs">Next.js</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-xs">Tailwind CSS</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-xs">Utilities</span>
+                        </div>
+                        <a href="https://www.toolzeey.com" class="inline-block w-full text-center px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium rounded-lg transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: School Management -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
+                    <div class="relative">
+                        <div class="absolute top-0 right-0 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-1 rounded-bl-lg font-medium">
+                            Full Stack
+                        </div>
+                        <img src="images/school.png" alt="School Management System" class="w-full h-64 object-contain bg-gray-50 dark:bg-gray-700 p-4">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">School Management System</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A comprehensive school management system with CRUD operations for teachers, students, subjects, and class management.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs">Next.js</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs">Node.js</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs">MongoDB</span>
+                        </div>
+                        <a href="https://sms.applicationguruji.com" class="inline-block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-medium rounded-lg transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="py-24 px-4 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">What I Bring to Your Project</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Delivering high-quality solutions with a focus on performance, design, and user experience.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-20 h-20 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-rocket text-3xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Lightning Fast</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Optimized code and assets for exceptional performance and smooth user experiences across all devices.
                     </p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-xl shadow-md text-center">
-                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-paint-brush text-2xl text-primary-600"></i>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-paint-brush text-3xl text-green-600"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Modern Design</h3>
-                    <p class="text-gray-600">
-                        Clean, contemporary aesthetics with attention to typography, spacing, and visual hierarchy.
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Pixel Perfect</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Meticulous attention to detail with responsive designs that look stunning on any screen size.
                     </p>
                 </div>
                 
-                <div class="bg-white p-8 rounded-xl shadow-md text-center">
-                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-tachometer-alt text-2xl text-primary-600"></i>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-20 h-20 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-code text-3xl text-purple-600"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Performance Optimized</h3>
-                    <p class="text-gray-600">
-                        Fast loading times with optimized assets and efficient code structure for better user experience.
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Clean Code</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                        Well-structured, maintainable code following industry best practices and modern standards.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="py-24 px-4">
+    <!-- Design Process Section -->
+    <section class="py-24 px-4 bg-white">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Our Design Process</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">My Development Process</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">A structured approach to delivering exceptional results for every project</p>
+            </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-xl font-bold">1</div>
-                    <h3 class="text-xl font-bold mb-3">Research</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Discovery -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-blue-600">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Discovery & Planning</h3>
                     <p class="text-gray-600">
-                        Understanding the industry, target audience, and competitive landscape.
+                        Understanding your vision, goals, and requirements to create a solid foundation for success.
                     </p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-xl font-bold">2</div>
-                    <h3 class="text-xl font-bold mb-3">Design</h3>
+                <!-- Design -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-green-600">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">UI/UX Design</h3>
                     <p class="text-gray-600">
-                        Creating wireframes and visual designs with modern UI principles.
+                        Crafting intuitive, beautiful interfaces that align with your brand and delight users.
                     </p>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-xl font-bold">3</div>
-                    <h3 class="text-xl font-bold mb-3">Development</h3>
-                    <p class="text-gray-600">
-                        Building responsive, optimized code with attention to detail.
+                <!-- Development -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-purple-600">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Development</h3>
+                    <p class="text-gray-600 mb-4">
+                        Building robust, scalable solutions with modern technologies and best practices.
                     </p>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2"></span>
+                            <span class="text-gray-700">Enterprise Architecture</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2"></span>
+                            <span class="text-gray-700">Performance Optimization</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="w-1.5 h-1.5 rounded-full bg-purple-500 mr-2"></span>
+                            <span class="text-gray-700">Clean Code Standards</span>
+                        </li>
+                    </ul>
                 </div>
                 
-                <div class="text-center">
-                    <div class="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-xl font-bold">4</div>
-                    <h3 class="text-xl font-bold mb-3">Launch</h3>
+                <!-- Launch -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-yellow-600">4</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Launch & Beyond</h3>
                     <p class="text-gray-600">
-                        Testing across devices and deploying with performance monitoring.
+                        Rigorous testing, smooth deployment, and ongoing support for long-term success.
                     </p>
                 </div>
             </div>
@@ -344,103 +561,106 @@
     </section>
 
     <!-- CTA Section -->
-    <section id="contact" class="py-24 px-4 hero-gradient text-white">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to get started?</h2>
-            <p class="text-xl max-w-2xl mx-auto text-gray-300 mb-10">
-                Contact us today to discuss your landing page needs and how we can help you create a stunning online presence.
+    <section class="py-24 px-4 hero-gradient text-white">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">Let's Work Together</h2>
+            <p class="text-xl text-gray-300 mb-10">
+                Have a project in mind or want to discuss potential opportunities?
+                I'd love to hear from you!
             </p>
-            
-            <div class="max-w-md mx-auto bg-white rounded-xl p-8 shadow-lg">
-                <form class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                        <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500">
-                    </div>
-                    
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                        <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500">
-                    </div>
-                    
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary-500 focus:border-primary-500"></textarea>
-                    </div>
-                    
-                    <button type="submit" class="w-full px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition duration-300 shadow">
-                        Send Message
-                    </button>
-                </form>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:amankhandelwal1500@gmail.com" class="px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition duration-300">
+                    Email Me
+                </a>
+                <a href="https://www.linkedin.com/in/aman-khandelwal-137bab207" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white text-primary-600 hover:bg-gray-100 font-medium rounded-lg transition duration-300">
+                    Connect on LinkedIn
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark-900 text-gray-400 py-12 px-4">
+    <footer class="bg-gray-900 text-gray-400 py-16 px-4">
         <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-                <div>
-                    <h3 class="text-xl font-bold text-white mb-4">Landing Page Showcase</h3>
-                    <p class="mb-4">
-                        Modern, responsive landing page designs for various industries and use cases.
-                    </p>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10">
+                <!-- About Column -->
+                <div class="md:col-span-4">
+                    <h3 class="text-2xl font-bold text-white mb-6">Aman Khandelwal</h3>
+                    <p class="mb-6">Full Stack Developer passionate about creating beautiful, functional, and user-centered digital experiences. Let's build something amazing together!</p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <i class="fab fa-twitter"></i>
+                        <a href="https://www.linkedin.com/in/aman-khandelwal-137bab207" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white transition-colors group">
+                            <i class="fab fa-linkedin-in group-hover:scale-110 transition-transform"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <i class="fab fa-facebook"></i>
+                        <a href="https://github.com/aman-khandelwal-1317" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white transition-colors group">
+                            <i class="fab fa-github group-hover:scale-110 transition-transform"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://www.freelancer.com/u/aman13171317" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white transition-colors group">
+                            <i class="fas fa-briefcase group-hover:scale-110 transition-transform"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <i class="fab fa-github"></i>
+                        <a href="mailto:amankhandelwal1500@gmail.com" class="w-10 h-10 rounded-full bg-gray-800 hover:bg-gray-700 flex items-center justify-center text-white transition-colors group">
+                            <i class="fas fa-envelope group-hover:scale-110 transition-transform"></i>
                         </a>
                     </div>
                 </div>
                 
-                <div>
-                    <h3 class="text-lg font-bold text-white mb-4">Landing Pages</h3>
-                    <ul class="space-y-2">
-                        <li><a href="Cars/index.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Velocity Motors</a></li>
-                        <li><a href="Restaurant/index.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">Leaf & Plate</a></li>
-                        <li><a href="Software/index.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">TradeStat Pro</a></li>
-                        <li><a href="Corporate/index.html" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">GlobalSource</a></li>
+                <!-- Quick Links -->
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-semibold text-white mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition-colors flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
+                            Home
+                        </a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
+                            About Me
+                        </a></li>
+                        <li><a href="#projects" class="hover:text-white transition-colors flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
+                            Projects
+                        </a></li>
+                        <li><a href="#showcase" class="hover:text-white transition-colors flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
+                            Showcase
+                        </a></li>
                     </ul>
                 </div>
                 
-                <div>
-                    <h3 class="text-lg font-bold text-white mb-4">Resources</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="hover:text-white transition">Documentation</a></li>
-                        <li><a href="#" class="hover:text-white transition">Design Guidelines</a></li>
-                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
-                    </ul>
+                <!-- Skills -->
+                <div class="md:col-span-3">
+                    <h3 class="text-lg font-semibold text-white mb-6">Tech Stack</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-800 text-sm rounded-full text-gray-300">Next.js</span>
+                        <span class="px-3 py-1 bg-gray-800 text-sm rounded-full text-gray-300">React</span>
+                        <span class="px-3 py-1 bg-gray-800 text-sm rounded-full text-gray-300">Node.js</span>
+                        <span class="px-3 py-1 bg-gray-800 text-sm rounded-full text-gray-300">TypeScript</span>
+                        <span class="px-3 py-1 bg-gray-800 text-sm rounded-full text-gray-300">Tailwind CSS</span>
+                        <span class="px-3 py-1 bg-gray-800 text-sm rounded-full text-gray-300">MongoDB</span>
+                        <span class="px-3 py-1 bg-gray-800 text-sm rounded-full text-gray-300">PostgreSQL</span>
+                        <span class="px-3 py-1 bg-gray-800 text-sm rounded-full text-gray-300">AWS</span>
+                    </div>
                 </div>
                 
-                <div>
-                    <h3 class="text-lg font-bold text-white mb-4">Contact</h3>
-                    <ul class="space-y-2">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary-500"></i>
-                            <span>123 Design Street, Web City, 10001</span>
-                        </li>
+                <!-- Contact -->
+                <div class="md:col-span-3">
+                    <h3 class="text-lg font-semibold text-white mb-6">Get In Touch</h3>
+                    <ul class="space-y-4">
                         <li class="flex items-start">
                             <i class="fas fa-envelope mt-1 mr-3 text-primary-500"></i>
-                            <span>contact@landingshowcase.com</span>
+                            <a href="mailto:amankhandelwal1500@gmail.com" class="hover:text-white transition-colors">amankhandelwal1500@gmail.com</a>
                         </li>
                         <li class="flex items-start">
-                            <i class="fas fa-phone-alt mt-1 mr-3 text-primary-500"></i>
-                            <span>+1 (555) 123-4567</span>
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary-500"></i>
+                            <span>New Delhi, India</span>
                         </li>
                     </ul>
                 </div>
             </div>
             
+            <!-- Copyright -->
             <div class="border-t border-gray-800 mt-12 pt-8 text-center">
-                <p>&copy; 2025 Landing Page Showcase. All rights reserved.</p>
+                <p class="text-sm">&copy; 2025 Aman Khandelwal. All rights reserved.</p>
+                <p class="text-xs mt-2 text-gray-600">Built with ❤️ using Tailwind CSS</p>
             </div>
         </div>
     </footer>
