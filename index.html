@@ -67,6 +67,15 @@
         .card-hover-effect:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border: 2px solid #0ea5e9;
+        }
+        
+        .card-hover-effect {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid transparent;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
         }
         
         .gradient-text-blue {
@@ -128,7 +137,88 @@
         </div>
     </header>
 
-    <!-- Showcase Section -->
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-4 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 dark:text-white">Featured Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Project 1: ImageInPixel -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
+                    <div class="relative">
+                        <div class="absolute top-0 right-0 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-1 rounded-bl-lg font-medium">
+                            Web App
+                        </div>
+                        <img src="images/imp.png" alt="ImageInPixel - Online Image Editor" class="w-full h-64 object-contain bg-gray-50 dark:bg-gray-700 p-4">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">ImageInPixel</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A fully client-side browser-based image editor with compression, cropping, resizing, filtering, and format conversion capabilities.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs">Next.js</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs">Tailwind CSS</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs">Client-side</span>
+                        </div>
+                        <a href="https://imageinpixel.com" class="inline-block w-full text-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-medium rounded-lg transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: MultiTools -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
+                    <div class="relative">
+                        <div class="absolute top-0 right-0 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-1 rounded-bl-lg font-medium">
+                            Web Tools
+                        </div>
+                        <img src="images/tools.png" alt="MultiTools - Online Utilities" class="w-full h-64 object-contain bg-gray-50 dark:bg-gray-700 p-4">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">ToolZeey</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A collection of essential web tools including QR code generator, color picker, password generator, unit converter, and more.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-xs">Next.js</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-xs">Tailwind CSS</span>
+                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-xs">Utilities</span>
+                        </div>
+                        <a href="https://www.toolzeey.com" class="inline-block w-full text-center px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium rounded-lg transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: School Management -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
+                    <div class="relative">
+                        <div class="absolute top-0 right-0 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-1 rounded-bl-lg font-medium">
+                            Full Stack
+                        </div>
+                        <img src="images/school.png" alt="School Management System" class="w-full h-64 object-contain bg-gray-50 dark:bg-gray-700 p-4">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">School Management System</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A comprehensive school management system with CRUD operations for teachers, students, subjects, and class management.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs">Next.js</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs">Node.js</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs">MongoDB</span>
+                        </div>
+                        <a href="https://sms.applicationguruji.com" class="inline-block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-medium rounded-lg transition duration-300">
+                            View Project
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Showcase Section -->
     <section id="showcase" class="py-24 px-4">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Our Landing Page Collection</h2>
@@ -281,7 +371,117 @@
         </div>
     </section>
 
-    <!-- About Me Section -->
+    <!-- React Native Apps Section -->
+    <section id="react-native-apps" class="py-24 px-4 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 dark:text-white">React Native Apps</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Expense Tracker App -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
+                    <div class="relative">
+                        <div class="absolute top-0 right-0 bg-gradient-to-r from-blue-900 to-indigo-900 text-white px-4 py-1 rounded-bl-lg font-medium">
+                            Finance App
+                        </div>
+                        <img src="images/expense_tracker.png" alt="Expense Tracker App" class="w-full h-64 object-contain bg-gray-50 dark:bg-gray-700 p-4">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-blue-900 to-indigo-900 bg-clip-text text-transparent">Expense Tracker - Plan Budget</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Track expenses, manage recurring bills, attach and view PDF or image bills, visualize detailed analytics, and stick to your monthly budget. 
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs">React Native</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs">Finance</span>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs">Budgeting</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://play.google.com/store/apps/details?id=com.applicationguruji.expensetracker" target="_blank" rel="noopener noreferrer" class="flex-1 text-center px-4 py-3 bg-[#0F172A] hover:bg-[#1E293B] text-white font-medium rounded-lg transition duration-300 flex items-center justify-center gap-2">
+                                <i class="fab fa-google-play"></i>
+                                View on Google Play
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BillMate App -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
+                    <div class="relative">
+                        <div class="absolute top-0 right-0 bg-gradient-to-r from-sky-500 to-cyan-600 text-white px-4 py-1 rounded-bl-lg font-medium">
+                            Bill Manager
+                        </div>
+                        <img src="images/billMate.png" alt="BillMate App" class="w-full h-64 object-contain bg-gray-50 dark:bg-gray-700 p-4">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-sky-500 to-cyan-600 bg-clip-text text-transparent">Bill Mate – Smart Bill Manager</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            All-in-one solution for billing, inventory, and customer management. Designed for small businesses, retailers, and wholesalers.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-sky-100 dark:bg-sky-900/30 text-sky-800 dark:text-sky-300 rounded-full text-xs">React Native</span>
+                            <span class="px-3 py-1 bg-sky-100 dark:bg-sky-900/30 text-sky-800 dark:text-sky-300 rounded-full text-xs">Bill Management</span>
+                            <span class="px-3 py-1 bg-sky-100 dark:bg-sky-900/30 text-sky-800 dark:text-sky-300 rounded-full text-xs">Reminders</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://play.google.com/store/apps/details?id=com.applicationguruji.billmanager" target="_blank" rel="noopener noreferrer" class="flex-1 text-center px-4 py-3 bg-[#0EA5E9] hover:bg-[#0284C7] text-white font-medium rounded-lg transition duration-300 flex items-center justify-center gap-2">
+                                <i class="fab fa-google-play"></i>
+                                View on Google Play
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Snake Classic 2D App -->
+                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
+                    <div class="relative">
+                        <div class="absolute top-0 right-0 bg-gradient-to-r from-green-600 to-emerald-600 text-white px-4 py-1 rounded-bl-lg font-medium">
+                            Game
+                        </div>
+                        <img src="images/snake.png" alt="Snake Classic 2D Game" class="w-full h-64 object-contain bg-gray-50 dark:bg-gray-700 p-4">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Snake Game Classic 2D Retro</h3>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            A modern remake of the classic Snake game with smooth controls, high scores, and nostalgic gameplay.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs">React Native</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs">Game</span>
+                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs">2D Graphics</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="https://play.google.com/store/apps/details?id=com.applicationGuruJi.snakeGame" target="_blank" rel="noopener noreferrer" class="flex-1 text-center px-4 py-3 bg-[#10B981] hover:bg-[#059669] text-white font-medium rounded-lg transition duration-300 flex items-center justify-center gap-2">
+                                <i class="fab fa-google-play"></i>
+                                View on Google Play
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- CTA Section -->
+<section class="py-24 px-4 hero-gradient text-white">
+    <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-5xl font-bold mb-6">Let's Work Together</h2>
+        <p class="text-xl text-gray-300 mb-10">
+            Have a project in mind or want to discuss potential opportunities?
+            I'd love to hear from you!
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="mailto:amankhandelwal1500@gmail.com"
+                class="px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition duration-300">
+                Email Me
+            </a>
+            <a href="https://www.linkedin.com/in/aman-khandelwal-137bab207" target="_blank" rel="noopener noreferrer"
+                class="px-6 py-3 bg-white text-primary-600 hover:bg-gray-100 font-medium rounded-lg transition duration-300">
+                Connect on LinkedIn
+            </a>
+        </div>
+    </div>
+</section>
+
+        <!-- About Me Section -->
     <section id="about" class="py-24 px-4 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 dark:text-white">About Me</h2>
@@ -362,87 +562,6 @@
                     <span class="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-full text-sm font-medium">
                         Razorpay
                     </span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-24 px-4 bg-gray-50 dark:bg-gray-900">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 dark:text-white">Featured Projects</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- Project 1: ImageInPixel -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
-                    <div class="relative">
-                        <div class="absolute top-0 right-0 bg-gradient-to-r from-green-500 to-emerald-600 text-white px-4 py-1 rounded-bl-lg font-medium">
-                            Web App
-                        </div>
-                        <img src="images/imp.png" alt="ImageInPixel - Online Image Editor" class="w-full h-64 object-contain bg-gray-50 dark:bg-gray-700 p-4">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">ImageInPixel</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            A fully client-side browser-based image editor with compression, cropping, resizing, filtering, and format conversion capabilities.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs">Next.js</span>
-                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs">Tailwind CSS</span>
-                            <span class="px-3 py-1 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full text-xs">Client-side</span>
-                        </div>
-                        <a href="https://imageinpixel.com" class="inline-block w-full text-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-medium rounded-lg transition duration-300">
-                            View Project
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2: MultiTools -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
-                    <div class="relative">
-                        <div class="absolute top-0 right-0 bg-gradient-to-r from-purple-600 to-indigo-600 text-white px-4 py-1 rounded-bl-lg font-medium">
-                            Web Tools
-                        </div>
-                        <img src="images/tools.png" alt="MultiTools - Online Utilities" class="w-full h-64 object-contain bg-gray-50 dark:bg-gray-700 p-4">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">ToolZeey</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            A collection of essential web tools including QR code generator, color picker, password generator, unit converter, and more.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-xs">Next.js</span>
-                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-xs">Tailwind CSS</span>
-                            <span class="px-3 py-1 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-xs">Utilities</span>
-                        </div>
-                        <a href="https://www.toolzeey.com" class="inline-block w-full text-center px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium rounded-lg transition duration-300">
-                            View Project
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3: School Management -->
-                <div class="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg card-hover-effect transition duration-300">
-                    <div class="relative">
-                        <div class="absolute top-0 right-0 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-4 py-1 rounded-bl-lg font-medium">
-                            Full Stack
-                        </div>
-                        <img src="images/school.png" alt="School Management System" class="w-full h-64 object-contain bg-gray-50 dark:bg-gray-700 p-4">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">School Management System</h3>
-                        <p class="text-gray-600 dark:text-gray-300 mb-4">
-                            A comprehensive school management system with CRUD operations for teachers, students, subjects, and class management.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs">Next.js</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs">Node.js</span>
-                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 rounded-full text-xs">MongoDB</span>
-                        </div>
-                        <a href="https://sms.applicationguruji.com" class="inline-block w-full text-center px-6 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-medium rounded-lg transition duration-300">
-                            View Project
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -560,25 +679,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-24 px-4 hero-gradient text-white">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-3xl md:text-5xl font-bold mb-6">Let's Work Together</h2>
-            <p class="text-xl text-gray-300 mb-10">
-                Have a project in mind or want to discuss potential opportunities?
-                I'd love to hear from you!
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="mailto:amankhandelwal1500@gmail.com" class="px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-medium rounded-lg transition duration-300">
-                    Email Me
-                </a>
-                <a href="https://www.linkedin.com/in/aman-khandelwal-137bab207" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-white text-primary-600 hover:bg-gray-100 font-medium rounded-lg transition duration-300">
-                    Connect on LinkedIn
-                </a>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-16 px-4">
         <div class="max-w-7xl mx-auto">
@@ -618,6 +718,10 @@
                         <li><a href="#projects" class="hover:text-white transition-colors flex items-center">
                             <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
                             Projects
+                        </a></li>
+                        <li><a href="#react-native-apps" class="hover:text-white transition-colors flex items-center">
+                            <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
+                            React Native Apps
                         </a></li>
                         <li><a href="#showcase" class="hover:text-white transition-colors flex items-center">
                             <i class="fas fa-chevron-right text-xs mr-2 text-primary-500"></i>
